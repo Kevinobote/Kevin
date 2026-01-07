@@ -1,10 +1,7 @@
-import { useState } from 'react';
-import { IoCalendarNumberOutline } from "react-icons/io5";
-import { IoIosCloudDownload } from "react-icons/io";
+import { Calendar, Download } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const CTASection = () => {
-  const [activeCard, setActiveCard] = useState(null);
-
   const handleBookTime = () => {
     window.open('https://calendly.com/kevinobote49/15min', '_blank');
   };
@@ -16,51 +13,126 @@ const CTASection = () => {
   const cards = [
     {
       id: 'booking',
-      subtitle: 'Schedule a Meeting',
-      icon: IoCalendarNumberOutline,
+      title: 'Schedule a Meeting',
+      description: 'Book a 15-minute intro call',
+      icon: Calendar,
       action: handleBookTime,
-      gradient: 'from-blue-500 to-indigo-600',
-      hoverGradient: 'from-blue-600 to-indigo-700'
+      accentColor: 'blue'
     },
     {
       id: 'cv',
-      subtitle: 'Download CV',
-      icon: IoIosCloudDownload    ,
+      title: 'Download CV',
+      description: 'View my full resume',
+      icon: Download,
       action: handleDownloadCV,
-      gradient: 'from-emerald-500 to-teal-600',
-      hoverGradient: 'from-emerald-600 to-teal-700'
+      accentColor: 'emerald'
     }
   ];
 
+  const accentColors = {
+    blue: {
+      iconBg: 'bg-blue-50',
+      iconText: 'text-blue-600',
+      hoverBorder: 'hover:border-blue-200',
+      hoverShadow: 'hover:shadow-blue-100/50'
+    },
+    emerald: {
+      iconBg: 'bg-emerald-50',
+      iconText: 'text-emerald-600',
+      hoverBorder: 'hover:border-emerald-200',
+      hoverShadow: 'hover:shadow-emerald-100/50'
+    }
+  };
+
   return (
-    <section className="relative py-16 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {cards.map((card) => (
-            <div
-              key={card.id}
-              className="group relative"
-              onMouseEnter={() => setActiveCard(card.id)}
-              onMouseLeave={() => setActiveCard(null)}
-              onClick={card.action}
-            >
-              <div className={`
-                absolute inset-0 bg-gradient-to-br ${activeCard === card.id ? card.hoverGradient : card.gradient}
-                rounded-2xl transform transition-all duration-300
-                ${activeCard === card.id ? 'scale-105 shadow-2xl' : 'scale-100 shadow-xl'}
-              `} />
-              
-              <div className="relative p-6 h-full">
-                <div className="bg-white/10 dark:bg-gray-800/20 w-12 h-12 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                  <card.icon className="w-6 h-6 text-white" />
+    <section className="relative py-20 sm:py-24 bg-slate-50">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Let's Connect
+          </h2>
+          <p className="mt-3 text-lg text-slate-600">
+            Ready to discuss your project or learn more about my work
+          </p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {cards.map((card, index) => {
+            const colors = accentColors[card.accentColor];
+            const Icon = card.icon;
+
+            return (
+              <motion.button
+                key={card.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -4 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={card.action}
+                className={`
+                  group relative w-full text-left
+                  bg-white rounded-2xl border border-slate-200
+                  p-8 transition-all duration-200
+                  ${colors.hoverBorder} ${colors.hoverShadow}
+                  hover:shadow-lg
+                  focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2
+                  cursor-pointer
+                `}
+              >
+                {/* Icon */}
+                <motion.div
+                  whileHover={{ scale: 1.05, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className={`
+                    inline-flex items-center justify-center
+                    h-12 w-12 rounded-xl mb-4
+                    ${colors.iconBg}
+                  `}
+                >
+                  <Icon className={`h-6 w-6 ${colors.iconText}`} strokeWidth={1.5} />
+                </motion.div>
+
+                {/* Content */}
+                <div>
+                  <h3 className="text-lg font-semibold text-slate-900 mb-1 tracking-tight">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm text-slate-600">
+                    {card.description}
+                  </p>
                 </div>
-                
-                <div className="space-y-2">
-                  <h3 className="text-white/90 dark:text-white text-xs uppercase tracking-wider">{card.subtitle}</h3>
-                </div>
-              </div>
-            </div>
-          ))}
+
+                {/* Arrow indicator */}
+                <motion.div
+                  initial={{ opacity: 0, x: -10 }}
+                  whileHover={{ opacity: 1, x: 0 }}
+                  className="absolute bottom-8 right-8"
+                >
+                  <svg
+                    className="h-5 w-5 text-slate-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </motion.div>
+              </motion.button>
+            );
+          })}
         </div>
       </div>
     </section>

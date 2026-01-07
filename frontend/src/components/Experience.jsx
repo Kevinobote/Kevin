@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Calendar, ArrowUpRight, ChevronDown, ChevronUp } from 'lucide-react';
+import { Calendar, ArrowUpRight, Plus, Minus } from 'lucide-react';
 import { GiArchiveResearch } from "react-icons/gi";
 import { FaDatabase, FaUserInjured } from "react-icons/fa";
 import { AiFillProduct } from "react-icons/ai";
@@ -21,7 +21,7 @@ const experiences = [
         "Conducting research on data science topics, authoring reports, and contributing to industry publications and conferences.",
         "Ensuring ethical AI development by assessing risks and compliance with data privacy and ethical frameworks.",
         "Collaborating with cross-disciplinary teams to align research outcomes with stakeholder needs.",
-        "Delivering ndings through technical publications and presentations.",
+        "Delivering findings through technical publications and presentations.",
         "Building an ERP system using Frappe Framework.",
         "Conducted training sessions on web development using Python, Django, SQL, HTML, CSS, and JavaScript.",
         "Preparing technical write ups for integrated APIs like Mpesa for secure payment solutions.",
@@ -75,7 +75,7 @@ const work_experiences = [
       startDate: "2023",
       achievements: [
         "Enhanced product functionality to improve user experience.",
-        "Supervised interns in SQL and Power BI to enable ecient data access and visualization.",
+        "Supervised interns in SQL and Power BI to enable efficient data access and visualization.",
         "Managed Power BI Gateway and created dashboards for analytics.",
         "Conducted system UAT and Beta testing.",
         "Trained clients on how to use agribusiness software.",
@@ -138,7 +138,7 @@ const work_experiences = [
       duration: "January 2021 - April 2021",
       startDate: "2021",
       achievements: [
-        "Developed the ocial website for the foundation.",
+        "Developed the official website for the foundation.",
         "Supervised community technology events.",
         "Provided IT support to all the departments.",
          
@@ -153,9 +153,9 @@ const work_experiences = [
       duration: "April 2020 - August 2021",
       startDate: "2020",
       achievements: [
-        "Analyzed and prepared Ziwa la ng’ombe ward community payment scheme.",
-        "Supervised Ziwa la ng’ombe and Kadzandani ward youths doing community-based activities.",
-        "Mentored Ziwa la ng’ombe and Kadzandani youth on entrepreneurship, digital and nancial literacy.",
+        "Analyzed and prepared Ziwa la ng'ombe ward community payment scheme.",
+        "Supervised Ziwa la ng'ombe and Kadzandani ward youths doing community-based activities.",
+        "Mentored Ziwa la ng'ombe and Kadzandani youth on entrepreneurship, digital and financial literacy.",
          
       ],
       skills: ["Operations Management", "Process Optimization", "Team Leadership"],
@@ -172,107 +172,110 @@ const ExperienceCard = ({ experience }) => {
       role: PropTypes.string.isRequired,
       company: PropTypes.string.isRequired,
       duration: PropTypes.string.isRequired,
-      description: PropTypes.string,
       achievements: PropTypes.arrayOf(PropTypes.string).isRequired,
       skills: PropTypes.arrayOf(PropTypes.string).isRequired,
     }).isRequired,
   };
 
   return (
-    <div className="relative">
-      <div className="absolute left-0 w-0.5 h-full bg-gray-200 dark:bg-gray-700" />
-      <div className="ml-6">
-        <div 
-          className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 mb-8 hover:shadow-xl transition-all cursor-pointer border border-gray-100 dark:border-gray-700"
-          onClick={() => setIsExpanded(!isExpanded)}
-        >
-          <div className="absolute -left-3 p-2 rounded-full bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700">
-            <experience.icon className="text-gray-600 dark:text-gray-400" size={16} />
+    <article className="relative pb-12 last:pb-0">
+      <div className="flex gap-6">
+        <div className="flex flex-col items-center flex-shrink-0">
+          <div className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center">
+            <experience.icon className="text-gray-600 dark:text-gray-400" size={18} />
           </div>
-          
-          <div className="flex justify-between items-start">
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+          <div className="w-px flex-1 bg-gray-200 dark:bg-gray-800 mt-3" />
+        </div>
+
+        <div className="flex-1 pt-1">
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="w-full text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded"
+            aria-expanded={isExpanded}
+          >
+            <div className="flex items-start justify-between gap-4 mb-2">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white tracking-tight">
                 {experience.role}
               </h3>
-              <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300 mt-1">
-                <span className="font-medium hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer flex items-center gap-1">
-                  {experience.company} <ArrowUpRight size={14} />
-                </span>
-                <span>•</span>
-                <span className="flex items-center gap-1">
-                  <Calendar size={14} />
-                  {experience.duration}
-                </span>
+              <div className="flex-shrink-0 mt-1 text-gray-400 dark:text-gray-500 transition-transform duration-200" style={{ transform: isExpanded ? 'rotate(0deg)' : 'rotate(0deg)' }}>
+                {isExpanded ? <Minus size={18} /> : <Plus size={18} />}
               </div>
             </div>
-            <div className="text-gray-600 dark:text-gray-400">
-              {isExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-            </div>
-          </div>
 
-          {isExpanded && (
-            <div className="mt-4 space-y-4 animate-fadeIn">
-              <p className="text-gray-600 dark:text-gray-300">{experience.description}</p>
-              
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-gray-600 dark:text-gray-400">
+              <span className="font-medium group-hover:text-gray-900 dark:group-hover:text-gray-300 transition-colors inline-flex items-center gap-1">
+                {experience.company}
+                <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+              </span>
+              <span className="text-gray-400 dark:text-gray-600">•</span>
+              <span className="inline-flex items-center gap-1.5">
+                <Calendar size={13} />
+                {experience.duration}
+              </span>
+            </div>
+          </button>
+
+          <div 
+            className="overflow-hidden transition-all duration-300 ease-out"
+            style={{
+              maxHeight: isExpanded ? '2000px' : '0',
+              opacity: isExpanded ? 1 : 0
+            }}
+          >
+            <div className="pt-6 space-y-6">
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Key Achievements:</h4>
-                <ul className="space-y-2">
+                <ul className="space-y-2.5 text-gray-600 dark:text-gray-400 leading-relaxed">
                   {experience.achievements.map((achievement, i) => (
-                    <li
-                      key={i}
-                      className="flex items-center gap-2 text-gray-600 dark:text-gray-300 animate-slideInRight"
-                      style={{ animationDelay: `${i * 100}ms` }}
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-gray-600 dark:bg-gray-400" />
-                      {achievement}
+                    <li key={i} className="flex gap-3">
+                      <span className="text-gray-400 dark:text-gray-600 mt-2 flex-shrink-0">—</span>
+                      <span className="flex-1">{achievement}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 pt-2">
                 {experience.skills.map((skill, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-700 
-                    text-gray-600 dark:text-gray-300 animate-fadeIn hover:bg-gray-200 dark:hover:bg-gray-600 
-                    transition-colors duration-200"
-                    style={{ animationDelay: `${i * 100}ms` }}
+                    className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700"
                   >
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
-          )}
+          </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
 const Experience = () => {
   return (
-    <section id='experience' className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
+    <section id="experience" className="py-20 px-4 bg-white dark:bg-gray-900">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-center animate-fadeInUp bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-400 transition-all duration-300">
-          Trainer Experience
-        </h2>
-        <div className="relative">
-          {experiences.map((experience) => (
-            <ExperienceCard key={experience.id} experience={experience} />
-          ))}
+        <div className="mb-20">
+          <h2 className="text-sm font-medium uppercase tracking-wider text-gray-500 dark:text-gray-500 mb-12">
+            Trainer Experience
+          </h2>
+          <div>
+            {experiences.map((experience) => (
+              <ExperienceCard key={experience.id} experience={experience} />
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-center animate-fadeInUp bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-400 transition-all duration-300">
-          Work Experience
-        </h2>
-        <div className="relative">
-          {work_experiences.map((experience) => (
-            <ExperienceCard key={experience.id} experience={experience} />
-          ))}
+
+        <div>
+          <h2 className="text-sm font-medium uppercase tracking-wider text-gray-500 dark:text-gray-500 mb-12">
+            Work Experience
+          </h2>
+          <div>
+            {work_experiences.map((experience) => (
+              <ExperienceCard key={experience.id} experience={experience} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
