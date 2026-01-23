@@ -1,21 +1,20 @@
 import { useState } from 'react';
 import { Calendar, ArrowUpRight, Plus, Minus } from 'lucide-react';
 import { GiArchiveResearch } from "react-icons/gi";
-import { FaDatabase, FaUserInjured } from "react-icons/fa";
-import { AiFillProduct } from "react-icons/ai";
-import { MdEngineering } from "react-icons/md";
+import { FaUserInjured } from "react-icons/fa";
+import { FaDatabase } from "react-icons/fa";
 import { GiWheelbarrow } from "react-icons/gi";
 
 import PropTypes from 'prop-types';
 
-const experiences = [
-  {
-    id: 1,
-    role: "Research Scholar",
-    company: "iLabAfrica - Nairobi, Kenya",
-    duration: "May 2024 - Present",
-    startDate: "2024",
-    achievements: [
+const work_experiences = [
+    {
+      id: 1,
+      role: "Research Scholar",
+      company: "iLabAfrica - Nairobi, Kenya",
+      duration: "May 2024 - Present",
+      startDate: "2024",
+      achievements: [
         "Analyzing data to uncover patterns and insights using statistical techniques and exploratory data analysis (EDA).",
         "Developing machine learning models for predictive analytics and optimizing model performance through feature engineering and tuning.",
         "Conducting research on data science topics, authoring reports, and contributing to industry publications and conferences.",
@@ -28,61 +27,9 @@ const experiences = [
         "Guided students in Big Data Technologies.",
         "Collaborated with stakeholders to align curriculum development with market needs.",
         "Created engaging course materials to simplify complex technical concepts for learners.",
-    ],
-    skills: ["Leadership", "Strategic Planning", "Digital Transformation"],
-    icon: GiArchiveResearch
-  },
-  {
-    id: 2,
-    role: "Data Science & Product Management Consultant",
-    company: "Guild Code - Nairobi, kenya",
-    duration: "Feb 2024 - Aug 2024",
-    startDate: "2024",
-    achievements: [
-        "Designed training programs for aspiring developers, focusing on practical implementation.",
-        "Taught Agile methodologies to improve project management and teamwork in tech environments.",
-    ],
-    skills: ["Operations Management", "Process Optimization", "Team Leadership"],
-    icon: FaDatabase,
-  },
-  {
-    id: 3,
-    role: "Client Relations Officer",
-    company: "eProd Solutions Limited - Nairobi, kenya",
-    duration: "September 2022 - May 2023",
-    startDate: "2022",
-    achievements: [
-        "Conducted software testing and provided customer support for technology solutions.",
-        "Conducted in-depth analysis and extraction of clients' data using SQL.",
-        "Developed and managed reports and dashboards for clients utilizing Power BI and SQL.",
-        "Provided quality assurance and software testing support.",
-        "Quality Assurance and Software testing.",
-        "Offered client support services.",
-        "Trained clients on how to set up, install and operate the eprod Software.",
-        
-    ],
-    skills: ["Operations Management", "Process Optimization", "Team Leadership"],
-    icon: FaUserInjured,
-  }
-].sort((a, b) => parseInt(b.startDate) - parseInt(a.startDate));
-
-const work_experiences = [
-    {
-      id: 1,
-      role: "Associate Product Manager",
-      company: "eProd Solutions Limited - Nairobi, Kenya",
-      duration: "May 2023 - June 2024",
-      startDate: "2023",
-      achievements: [
-        "Enhanced product functionality to improve user experience.",
-        "Supervised interns in SQL and Power BI to enable efficient data access and visualization.",
-        "Managed Power BI Gateway and created dashboards for analytics.",
-        "Conducted system UAT and Beta testing.",
-        "Trained clients on how to use agribusiness software.",
-        "Headed product management meetings, created and managed jira issues.",
       ],
       skills: ["Leadership", "Strategic Planning", "Digital Transformation"],
-      icon: AiFillProduct
+      icon: GiArchiveResearch
     },
     {
       id: 2,
@@ -103,51 +50,24 @@ const work_experiences = [
     },
     {
       id: 3,
-      role: "Client Relations Trainee",
+      role: "Client Relations Officer",
       company: "eProd Solutions Limited - Nairobi, kenya",
-      duration: "March 2022 - August 2022",
+      duration: "September 2022 - May 2023",
       startDate: "2022",
       achievements: [
-        "Analysed and extracted clients' data using SQL.",
-        "Learned using Power BI to connect with data on MySQL server and visualization.",
-        "Created reports and dashboards for clients using Power BI.",
-        "Client relations and support.",
-          
+        "Conducted software testing and provided customer support for technology solutions.",
+        "Conducted in-depth analysis and extraction of clients' data using SQL.",
+        "Developed and managed reports and dashboards for clients utilizing Power BI and SQL.",
+        "Provided quality assurance and software testing support.",
+        "Quality Assurance and Software testing.",
+        "Offered client support services.",
+        "Trained clients on how to set up, install and operate the eprod Software.",
       ],
       skills: ["Operations Management", "Process Optimization", "Team Leadership"],
       icon: FaUserInjured,
     },
     {
       id: 4,
-      role: "Software Engineer Intern",
-      company: "eProd Solutions Limited - Nairobi, kenya",
-      duration: "January 2022 - February 2023",
-      startDate: "2022",
-      achievements: [
-        "Developed API documentation for seamless integrations.",
-        "Participated in Agile development cycles and contributed to software testing.",
-        "Trained in SQL and Power BI for database management and analytics.",  
-      ],
-      skills: ["Operations Management", "Process Optimization", "Team Leadership"],
-      icon: MdEngineering,
-    },
-    {
-      id: 5,
-      role: "Information Technology Intern",
-      company: "Swahilipot Hub Foundation - Mombasa, kenya",
-      duration: "January 2021 - April 2021",
-      startDate: "2021",
-      achievements: [
-        "Developed the official website for the foundation.",
-        "Supervised community technology events.",
-        "Provided IT support to all the departments.",
-         
-      ],
-      skills: ["Operations Management", "Process Optimization", "Team Leadership"],
-      icon: MdEngineering,
-    },
-    {
-      id: 6,
       role: "Supervisor",
       company: "Kazi Mtaani programme - Mombasa, kenya",
       duration: "April 2020 - August 2021",
@@ -156,7 +76,6 @@ const work_experiences = [
         "Analyzed and prepared Ziwa la ng'ombe ward community payment scheme.",
         "Supervised Ziwa la ng'ombe and Kadzandani ward youths doing community-based activities.",
         "Mentored Ziwa la ng'ombe and Kadzandani youth on entrepreneurship, digital and financial literacy.",
-         
       ],
       skills: ["Operations Management", "Process Optimization", "Team Leadership"],
       icon: GiWheelbarrow,
@@ -256,17 +175,6 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 px-4 bg-white dark:bg-gray-900">
       <div className="max-w-3xl mx-auto">
-        <div className="mb-20">
-          <h2 className="text-sm font-medium uppercase tracking-wider text-gray-500 dark:text-gray-500 mb-12">
-            Trainer Experience
-          </h2>
-          <div>
-            {experiences.map((experience) => (
-              <ExperienceCard key={experience.id} experience={experience} />
-            ))}
-          </div>
-        </div>
-
         <div>
           <h2 className="text-sm font-medium uppercase tracking-wider text-gray-500 dark:text-gray-500 mb-12">
             Work Experience

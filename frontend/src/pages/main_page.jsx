@@ -5,6 +5,7 @@ import Testimonials from "../components/Testimonials";
 
 import { useState } from "react";
 import Expertise from "../components/Expertise";
+import Team from "../components/Team";
 
 const Main = () => {
   const [isDarkTheme] = useState(true);
@@ -14,6 +15,7 @@ const Main = () => {
       <Hero isDarkTheme={isDarkTheme} />
       <Expertise />
       {/* <SkillsSection /> */}
+      <Team />
       <CTASection />
       <Testimonials />
     </div>

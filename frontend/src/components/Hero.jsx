@@ -116,7 +116,6 @@ const HeroMain = () => {
                   src={kevin}
                   alt="Kevin at work"
                   className="absolute inset-0 w-full h-full object-cover"
-                  style={{ filter: 'grayscale(100%) saturate(0.7) contrast(1.1)' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 

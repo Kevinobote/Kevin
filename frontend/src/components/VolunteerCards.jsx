@@ -19,15 +19,36 @@ const volunteer_experiences = [
             "Mentored data analysis students on data analysis trends and practices.",
         ],
     },
+    {
+        id: "1",
+        role: "Web Development Mentor",
+        company: "Genesys Tech Hub",
+        duration: "March 2022 - October 2023",
+        startDate: "2022",
+        achievements: [
+            "Tutored web development track.",
+            "Mentored web development students on web development trends.",
+        ],
+    },
+    {
+        id: "2",
+        role: "Red Cross Volunteer",
+        company: "Red Cross - Kenya",
+        duration: "August 2019 - Present",
+        startDate: "2019",
+        achievements: [
+            "Participated in emergency response operations during the COVID-19 pandemic.",
+            "Delivered educational mentorship and organized community outreach programs.",
+            "Certified in First Aid through the Red Cross Foundation.",
+        ],
+    },
 ].sort((a, b) => parseInt(b.startDate) - parseInt(a.startDate));
 
 // Map offering IDs to their respective images
 const offeringImages = {
-    "0": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d", // therapy / counselling
-    "1": "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca", // trauma / reflection / healing
-    "2": "https://images.unsplash.com/photo-1580281658629-5a1a0c1a3d44", // psychiatric consultation
-    "3": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf", // assessment / professional discussion
-    "4": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac", // community / MHPSS programs
+    "0": "https://images.unsplash.com/photo-1551288049-bebda4e38f71", // data analysis / technology
+    "1": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6", // web development / coding
+    "2": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca", // red cross / humanitarian work
 };
 
 
@@ -105,64 +126,33 @@ const generateDetailedDescription = (offering) => {
 
     const descriptionMap = {
         "0": [
-            "Therapeutic & Counselling Services",
-            "We provide a full spectrum of therapy options designed to support mental, emotional, and social well-being across individuals and families.",
-            "Our services include:",
-            "• Individual Psychotherapy",
-            "• Group Counselling",
-            "• Family & Marriage Counseling",
-            "• Couples Counselling",
-            "• Anger Management Programs",
-            "• Yoga, Relaxation, & Breathing Therapy",
-            "• Therapeutic Massage",
-            "• Psycho-education Sessions, including Casariya tea-time community talks",
-            "Our therapists apply practical, culturally grounded approaches that promote resilience, healing, and balance."
+            "Data Analyst Path Lead at Genesys Tech Hub",
+            "Leading the data analysis curriculum development and student mentorship at Genesys Tech Hub.",
+            "Key Responsibilities:",
+            "• Prepared comprehensive Data Analysis Curriculum",
+            "• Coordinated with mentors for effective tutoring sessions",
+            "• Mentored data analysis students on current industry trends and best practices",
+            "This role demonstrates leadership in education technology and commitment to empowering the next generation of data professionals with practical skills and knowledge."
         ],
 
         "1": [
-            "Trauma-Informed Care",
-            "Recognizing the impact of conflict, displacement, and loss across Somali communities, MMHCTI delivers specialized trauma-responsive care.",
-            "We support individuals experiencing:",
-            "• Post-Traumatic Stress Disorder (PTSD)",
-            "• Domestic and Gender-Based Violence–related trauma",
-            "• Adjustment and Stress Disorders",
-            "• Relationship and Family Difficulties",
-            "• Sleep and Anxiety-related Problems",
-            "• Dissociative and Somatic Symptom Disorders",
-            "Our trauma care model prioritizes safety, empowerment, dignity, and long-term recovery."
+            "Web Development Mentor at Genesys Tech Hub",
+            "Provided mentorship and guidance to aspiring web developers, helping them navigate the dynamic world of web technologies.",
+            "Key Contributions:",
+            "• Tutored students in the web development track",
+            "• Mentored web development students on emerging web development trends",
+            "• Shared practical insights and industry best practices",
+            "This experience showcases dedication to technical education and passion for helping students build strong foundations in web development."
         ],
 
         "2": [
-            "Psychiatric Consultation & Medication Management",
-            "Our psychiatric team provides comprehensive clinical evaluations, diagnosis, and medication management for clients who require medical support alongside therapy.",
-            "We emphasize careful assessment, continuous monitoring, and collaborative care planning to ensure treatment remains safe, effective, and personalized."
-        ],
-
-        "3": [
-            "Psychological Assessments",
-            "We conduct culturally and linguistically appropriate psychological assessments to guide accurate diagnosis and treatment planning.",
-            "Assessment areas include:",
-            "• Anxiety and Mood Disorders",
-            "• OCD and Obsessive Behaviours",
-            "• Personality Disorders",
-            "• Psychotic Disorders",
-            "• Addiction Disorders",
-            "• ADHD & Conduct Disorders",
-            "• Stress, Relationship, and Divorce-related Concerns",
-            "• Emotional and Behavioural Difficulties",
-            "These assessments support informed clinical decisions and long-term care."
-        ],
-
-        "4": [
-            "MHPSS Community Programs",
-            "MMHCTI extends mental health support beyond clinical settings through Mental Health and Psychosocial Support (MHPSS) community programs.",
-            "Our initiatives include:",
-            "• Community awareness and prevention campaigns",
-            "• Psycho-education and peer support groups",
-            "• Programs integrating mental health with peace-building and social cohesion",
-            "• Capacity-building for local leaders, youth, and women's groups",
-            "• Partnerships with NGOs, government agencies, and community organizations",
-            "Our goal is to foster resilient, informed, and mentally healthy communities."
+            "Red Cross Volunteer",
+            "Active volunteer with the Kenya Red Cross, contributing to humanitarian efforts and community service.",
+            "Key Achievements:",
+            "• Participated in emergency response operations during the COVID-19 pandemic",
+            "• Delivered educational mentorship and organized community outreach programs",
+            "• Certified in First Aid through the Red Cross Foundation",
+            "This volunteer work demonstrates commitment to public service, community welfare, and making a meaningful impact during critical times."
         ]
     };
 

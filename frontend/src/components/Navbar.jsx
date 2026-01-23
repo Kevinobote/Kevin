@@ -54,7 +54,7 @@ const Navbar = () => {
   return (
     <>
       {/* Floating Logo */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
@@ -75,7 +75,7 @@ const Navbar = () => {
             </div>
           </motion.div>
         </a>
-      </motion.div>
+      </motion.div> */}
 
       {/* Desktop Navigation */}
       <AnimatePresence mode="wait">
