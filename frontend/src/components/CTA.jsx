@@ -3,8 +3,12 @@ import { motion } from 'framer-motion';
 
 const CTASection = () => {
   const handleBookTime = () => {
-    window.open('https://calendly.com/kevinobote49/15min', '_blank');
-  };
+  window.open(
+    "https://calendar.app.google/2MBsZrTo7t1ktbbF7",
+    "_blank"
+  );
+};
+
 
   const handleDownloadCV = () => {
     window.open('/Kevin_Obote.pdf', '_blank');
