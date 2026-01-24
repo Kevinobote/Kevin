@@ -27,8 +27,8 @@ const CountUp = ({ to, suffix = "" }) => {
 
 const ExperienceHero = () => {
   const stats = [
-    { label: 'Years Experience', value: 8, suffix: '+', icon: Zap, color: 'text-amber-500' },
-    { label: 'Projects Delivered', value: 40, suffix: '+', icon: Layers, color: 'text-blue-500' },
+    { label: 'Years Experience', value: 6, suffix: '+', icon: Zap, color: 'text-amber-500' },
+    { label: 'Projects Delivered', value: 50, suffix: '+', icon: Layers, color: 'text-blue-500' },
     { label: 'Global Clients', value: 12, suffix: '', icon: Globe, color: 'text-emerald-500' },
   ];
 

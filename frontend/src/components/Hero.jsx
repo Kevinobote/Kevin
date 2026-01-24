@@ -131,7 +131,7 @@ const HeroMain = () => {
                   <div className="rounded-xl bg-white/10 backdrop-blur-md border border-white/15 p-3 shadow-lg">
                     <div className="flex items-center gap-2 mb-1">
                       <div className="w-2 h-2 rounded-full bg-white/50" />
-                      <div className="text-lg font-semibold tracking-tight text-white">5+</div>
+                      <div className="text-lg font-semibold tracking-tight text-white">6+</div>
                     </div>
                     <p className="text-[11px] text-white/70">years exp</p>
                   </div>
@@ -259,14 +259,14 @@ const HeroAbout = () => {
               className="rounded-3xl border border-white/10 bg-slate-800/40 backdrop-blur-xl p-8"
             >
               <div className="mb-6">
-                <div className="text-5xl font-bold text-white mb-2">150+</div>
+                <div className="text-5xl font-bold text-white mb-2">50+</div>
                 <div className="text-sm font-medium text-slate-300">Projects Delivered</div>
               </div>
 
               {/* Stats Grid */}
               <div className="grid grid-cols-3 gap-4 mb-6">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-white">5+</div>
+                  <div className="text-2xl font-bold text-white">6+</div>
                   <div className="text-[10px] font-medium uppercase tracking-wide text-slate-400 mt-1">
                     YEARS
                   </div>
@@ -343,26 +343,26 @@ const HeroAbout = () => {
                     Data Analysis
                   </span>
                   <span className="inline-flex items-center rounded-full border border-white/20 bg-slate-700/50 px-4 py-2 text-sm font-medium text-white whitespace-nowrap">
-                    React
+                    NLP
                   </span>
                   <span className="inline-flex items-center rounded-full border border-white/20 bg-slate-700/50 px-4 py-2 text-sm font-medium text-white whitespace-nowrap">
                     Product Management
                   </span>
                   {/* Skills - Duplicate Set for Seamless Loop */}
                   <span className="inline-flex items-center rounded-full border border-white/20 bg-slate-700/50 px-4 py-2 text-sm font-medium text-white whitespace-nowrap">
-                    Python
+                    Programme Management
                   </span>
                   <span className="inline-flex items-center rounded-full border border-white/20 bg-slate-700/50 px-4 py-2 text-sm font-medium text-white whitespace-nowrap">
-                    Machine Learning
+                    Software Engineering
                   </span>
                   <span className="inline-flex items-center rounded-full border border-white/20 bg-slate-700/50 px-4 py-2 text-sm font-medium text-white whitespace-nowrap">
-                    Data Analysis
+                    AI Systems Engineering
                   </span>
                   <span className="inline-flex items-center rounded-full border border-white/20 bg-slate-700/50 px-4 py-2 text-sm font-medium text-white whitespace-nowrap">
-                    React
+                    Monitoring & Evaluation
                   </span>
                   <span className="inline-flex items-center rounded-full border border-white/20 bg-slate-700/50 px-4 py-2 text-sm font-medium text-white whitespace-nowrap">
-                    Product Management
+                    LM Harnessing
                   </span>
                 </motion.div>
               </div>

@@ -14,7 +14,7 @@ const Team = () => {
       
       <div className="relative max-w-7xl mx-auto px-6 mb-16 text-center">
        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-400/10 border border-indigo-400/20 text-indigo-600 dark:text-indigo-300 text-[11px] font-bold uppercase tracking-widest mb-6">
-        <Users size={14} /> Our Team
+        <Users size={14} /> Recommenders
         </div>
 
         <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-neutral-900 dark:text-white">

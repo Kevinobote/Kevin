@@ -99,14 +99,14 @@ export const TEAM_MEMBERS = [
   },
   {
     name: 'Immaculate Wakio',
-    role: 'Lead Solutions Architect',
+    role: 'Business Intelligence Developer',
     icon: Cpu,
     image: immaculate,
-    bio: 'Designs scalable software systems and translates business problems into robust digital platforms.'
+    bio: 'A results-driven Data Analyst and aspiring Data Scientist with 3 years of experience transforming complex data into actionable insights that drive strategic decision-making and continuous improvement.'
   },
   {
     name: 'Moses Mutuku',
-    role: 'Director of Product & Delivery',
+    role: 'Full Stack Developer',
     icon: Briefcase,
     featured: true,
     image: moses,
@@ -121,21 +121,21 @@ export const TEAM_MEMBERS = [
   },
   {
     name: 'Derek',
-    role: 'Creative Director',
+    role: 'BSF Techhnician',
     icon: Palette,
     image: derek,
     bio: 'Leads visual direction and ensures every interface reflects clarity, craft, and premium execution.'
   },
   {
     name: 'Jackline',
-    role: 'Senior UI/UX Designer',
+    role: 'Data Scientist',
     icon: Palette,
     image: jackline,
     bio: 'Designs intuitive user journeys that balance business goals with delightful digital experiences.'
   },
   {
     name: 'Nicole',
-    role: 'Product Designer',
+    role: 'Project Manager',
     icon: Palette,
     image: nicole,
     bio: 'Transforms complex requirements into elegant, human-centred interfaces and workflows.'

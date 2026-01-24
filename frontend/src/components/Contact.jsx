@@ -20,16 +20,16 @@ const ContactSection = () => {
 
   const references = [
     {
-      name: "Francis",
-      title: "Client Relations Manager",
-      company: "eProd Solutions Limited",
-      contact: "+254 716 163 623"
+      name: "Dr. Benjamin Kikwai",
+      title: "Lecturer : Pure Mathematics",
+      company: "Machakos University",
+      contact: "+254 000 000 000"
     },
     {
-      name: "Kevin Ng'ang'a",
-      title: "Software Engineer",
-      company: "Safaricom PLC",
-      contact: "+254 710 716 758"
+      name: "Dr. Evans Omondi",
+      title: "Associate Research Scientist",
+      company: "APHRC, Nairobi Kenya",
+      contact: "+254 000 000 000"
     }
   ];
 
