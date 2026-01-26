@@ -148,3 +148,86 @@ export const TEAM_MEMBERS = [
     bio: 'Architects high-performance web experiences and ensures pixel-perfect execution in production.'
   },
 ];
+
+export const testimonials = [
+    {
+      id: 1,
+      content: "Kevin Obote is the kind of colleague you look forward to working with. He possesses deep expertise in his field and excels at putting his knowledge into practice with precision. Kevin is also highly receptive to professional feedback, welcoming constructive criticism with an open mind. He's someone you can engage in meaningful and insightful conversations with, making every interaction both productive and enjoyable.",
+      author: "Chris Achinga",
+      role: "Software Engineer (Python & JavaScript)",
+      rating: 5,
+      date: "August 28, 2024",
+      image: chris,
+      tags: ["Project Management"]
+    },
+    {
+      id: 2,
+      content: "Kevin brings his best self to every project and makes sure to deliver what he promises. He's a great team player.",
+      author: "Nicole G. O. Apondi",
+      role: "Civil Engineering Graduate | Researcher | Environmentalist | STEM Mentor",
+      rating: 4,
+      date: "August 24, 2024",
+      image: nicole,
+      tags: ["Project Management"]
+    },
+    {
+      id: 3,
+      content: "Kevin is great at planning and perfectly executing all the projects he's working on.",
+      author: "MOSES MUTUKU",
+      role: "Software Developer extraordinaire",
+      rating: 5,
+      date: "August 24, 2024",
+      image: moses,
+      tags: ["Custom Software Development"]
+    },
+    {
+      id: 4,
+      content: "I highly recommend Kevin Obote for data science projects. His expertise in Power BI, classification, and regression models is exceptional. Kevin excels in collaboration, fostering open communication and teamwork. His creativity and commitment to continuous improvement enhance his contributions. With a strong sense of professionalism and reliability, Kevin is a valuable asset to any project.",
+      author: "Achieng' Jackline",
+      role: "Research Scholar | Data Scientist | Machine Learning | Artificial Intelligence",
+      rating: 5,
+      date: "August 21, 2024",
+      image: jackline,
+      tags: ["Data Reporting"]
+    },
+    {
+      id: 5,
+      content: "Yes, he is great at project testing, evaluation and implementation.",
+      author: "Derek Kigen",
+      role: "Technical Field Officer focused on sustainable agribusiness",
+      rating: 4,
+      date: "August 21, 2024",
+      image: derek,
+      tags: ["Business Analytics"]
+    },
+    {
+      id: 6,
+      content: "You can count on Kevin to deliver quality services.",
+      author: "Norbert Osiemo",
+      role: "Software Engineer | LLM Trainer | Python | Django | React Js | Next Js",
+      rating: 5,
+      date: "August 21, 2024",
+      image: nobert,
+      tags: ["Project Management"]
+    },
+    {
+      id: 7,
+      content: "Great team resulted in massive success.",
+      author: "Stephen Ndunge",
+      role: "Junior Network Engineer | Network Administrator",
+      rating: 5,
+      date: "August 21, 2024",
+      image: kevinObote,
+      tags: ["Business Analytics"]
+    },
+    {
+      id: 8,
+      content: "I highly recommend Kevin for his exceptional professionalism and strong communication skills. He is one of the best data analysts/scientists in the field, consistently delivering outstanding results.",
+      author: "Immaculate Wakio",
+      role: "Data Analyst | Data Scientist | Power BI Developer | Business Intelligence Developer",
+      rating: 5,
+      date: "August 22, 2024",
+      image: immaculate,
+      tags: ["Custom Software Development"]
+    }
+  ];
