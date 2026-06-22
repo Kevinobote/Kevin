@@ -1,0 +1,169 @@
+KEVIN OBOTE PORTFOLIO — IMPROVEMENTS NEEDED
+=============================================
+Based on: Kevin_Obote_Portfolio_Website_PRD.pdf & Kevin_Obote_About_Me_Copy.pdf
+Date: Generated from current hineni branch analysis
+
+=========================================
+1. HERO / HOME PAGE
+=========================================
+[HIGH] Update headline subtitle from "Data Scientist | Software Engineer | Product Manager"
+       → Should reflect AI researcher + engineer identity per PRD
+       → Suggested: "AI Researcher & Engineer | Low-Resource Language AI | Nairobi"
+
+[HIGH] Replace generic "About Me" copy with the PRD-approved version from the About Me Copy PDF
+       → Current copy is generic ("explorer, dreamer, developer, thinker")
+       → New copy should be the full About page version from the PDF (research-focused, evidence-backed)
+
+[HIGH] Hero stats are unverified/inflated — "50+ projects", "5+ years exp", "98% satisfaction"
+       → PRD Section 7b explicitly flags "years of experience" as inconsistent (3+, 4+, 5+ across CVs)
+       → "150+ Projects Delivered" in the About section is also unverified
+       → Remove or replace with reconciled, verifiable figures only
+
+[MEDIUM] Replace hero variant with PRD-recommended Variant B (evidence-led):
+         "I build AI systems for the languages and economies most models ignore..."
+
+[MEDIUM] Add a quantified, sourced achievement visible above the fold (PRD Epic 1 acceptance criteria)
+
+=========================================
+2. NAVIGATION & SITE STRUCTURE
+=========================================
+[HIGH] Missing pages per PRD scope:
+       - /about (dedicated About page)
+       - /research (Research & Publications page — MUST HAVE)
+       - /teaching (Teaching & Mentorship section)
+       - /contact (dedicated Contact page — currently only a section)
+
+[MEDIUM] Current nav: Home, Volunteer, Projects, Experience
+         → PRD recommended: Home, About, Research, Projects, Experience, Teaching & Mentorship, Contact
+
+[LOW] PRD recommends role-based wayfinding on home page (soft routing for recruiter/researcher/student)
+
+=========================================
+3. RESEARCH & PUBLICATIONS (MISSING — MUST HAVE)
+=========================================
+[CRITICAL] No Research/Publications page exists at all
+           → PRD requires: full publication list with DOIs, co-authors, authorship roles
+           → Must include: Google Scholar link, ORCID link
+           → Publications filterable by: Peer-Reviewed / Under Review / Conference
+
+=========================================
+4. PROJECTS / CASE STUDIES
+=========================================
+[HIGH] Current projects page lacks deep case studies
+       → PRD requires minimum 3 detailed case studies:
+         • Sema Sasa (ASR for African languages)
+         • Telecom Churn ML Pipeline
+         • Kalenjin ASR Baseline
+         • Transit GNN+LSTM (optional)
+       → Each must include: problem, architecture, evaluation metrics, deployment stack, outcomes
+
+[MEDIUM] Add a framing paragraph connecting projects under "low-resource/multilingual AI" theme
+
+=========================================
+5. ABOUT PAGE
+=========================================
+[HIGH] No dedicated /about route — content is only embedded in hero
+       → PRD requires a standalone About page with:
+         • Full narrative bio (use PDF-provided copy)
+         • Professional photo
+         • Current affiliations (MSc at Strathmore, iLabAfrica, Guild Code)
+         • Location
+
+=========================================
+6. EXPERIENCE / TIMELINE
+=========================================
+[MEDIUM] Verify all dates and titles match reconciled facts table
+         → Guild Code: "AI Systems Engineer" vs "Founder and CEO" discrepancy must be resolved
+         → MSc dates inconsistent across sources
+
+[MEDIUM] Add downloadable CV PDF (single canonical version)
+         → Currently has a "Resume" button pointing to /Kevin_Obote.pdf — verify this exists and is reconciled
+
+=========================================
+7. TEACHING & MENTORSHIP (MISSING)
+=========================================
+[MEDIUM] No dedicated teaching/mentorship section
+         → PRD requires: iLabAfrica TA work, Genesys Tech Hub curriculum lead role
+
+=========================================
+8. CONTACT PAGE
+=========================================
+[MEDIUM] Add Calendly/scheduling link as an option (currently only in navbar "Talk to Me" button)
+[LOW] Add ORCID, Google Scholar links to contact section
+[LOW] References section exposes personal phone numbers — PRD says "no sensitive personal data"
+
+=========================================
+9. DESIGN & VISUAL SYSTEM
+=========================================
+[HIGH] Current design uses a dark-mode developer aesthetic
+       → PRD explicitly REJECTED this direction
+       → PRD chose: "Editorial Precision" — calm, editorial, research-paper-adjacent
+       → Navy/teal palette, serif headings, generous whitespace, warm off-white background
+
+[MEDIUM] Stock Unsplash images used for backgrounds
+         → PRD says: "No stock photos of generic robots or circuit boards"
+         → Replace with architecture diagrams or remove
+
+[LOW] Typography doesn't follow PRD spec:
+      → Headings: serif or distinctive sans (editorial/academic feel)
+      → Body: clean legible sans-serif
+      → Metrics/DOIs: monospace
+
+=========================================
+10. CONTENT / BRAND ALIGNMENT
+=========================================
+[HIGH] Site currently positions Kevin as "Guild Code" company portfolio (Team section, company offerings)
+       → PRD is clear: this is a PERSONAL portfolio, not a company site
+       → The "Team" section showing Guild Code team members should be removed or moved to a guild-code.com site
+       → The "Expertise" section frames skills around companies — should be evidence-linked per PRD
+
+[HIGH] "Offerings" (volunteering cards) section uses generic language
+       → Should be reframed as personal volunteering/mentorship history
+
+=========================================
+11. TECHNICAL / NON-FUNCTIONAL
+=========================================
+[MEDIUM] No structured data (schema.org Person markup) — required for SEO
+[MEDIUM] No sitemap.xml or robots.txt
+[MEDIUM] Page uses external Unsplash images — contributes to page weight and load time
+[LOW] No prefers-reduced-motion respect for animations
+[LOW] Contact form lacks honeypot spam protection (only has backend validation)
+
+=========================================
+12. RECONCILED FACTS — BLOCKERS (from PRD Section 7b)
+=========================================
+These must be resolved BEFORE updating public content:
+  [ ] Swahili ASR WER: 0.19 vs 0.33 vs 0.15 — which is correct?
+  [ ] Deep Learning Indaba 2025: "Winner" vs "2nd Place Overall"?
+  [ ] MSc completion date: May 2024–Present vs May 2026 vs June 2026 vs August 2026?
+  [ ] BSc graduation: April 2023 or just 2023?
+  [ ] Guild Code role: "AI Systems Engineer" or "Founder and CEO"?
+  [ ] Years of experience: 3+ or 4+ or 5+?
+
+=========================================
+PRIORITY SUMMARY
+=========================================
+CRITICAL (blocks launch):
+  - Add Research & Publications page
+  - Resolve reconciled facts (Section 7b)
+
+HIGH (major improvements):
+  - Rewrite hero/about copy with PDF-approved version
+  - Remove unverified stats
+  - Remove Guild Code team section (personal site, not company)
+  - Add dedicated About page
+  - Add case studies to Projects
+  - Shift design direction toward editorial precision (navy/teal, whitespace)
+
+MEDIUM:
+  - Add Teaching & Mentorship section
+  - Update navigation structure
+  - Add structured data / SEO
+  - Verify experience timeline facts
+  - Add scheduling link to contact
+
+LOW:
+  - Role-based wayfinding
+  - Typography refinement
+  - prefers-reduced-motion
+  - Honeypot spam protection

@@ -1,136 +1,133 @@
 import { useState } from 'react';
 import { Calendar, ArrowUpRight, Plus, Minus } from 'lucide-react';
-import { GiArchiveResearch } from "react-icons/gi";
-import { FaUserInjured } from "react-icons/fa";
-import { FaDatabase } from "react-icons/fa";
-import { GiWheelbarrow } from "react-icons/gi";
-
 import PropTypes from 'prop-types';
 
 const work_experiences = [
-    {
-      id: 1,
-      role: "Research Scholar",
-      company: "iLabAfrica - Nairobi, Kenya",
-      duration: "May 2024 - Present",
-      startDate: "2024",
-      achievements: [
-        "Analyzing data to uncover patterns and insights using statistical techniques and exploratory data analysis (EDA).",
-        "Developing machine learning models for predictive analytics and optimizing model performance through feature engineering and tuning.",
-        "Conducting research on data science topics, authoring reports, and contributing to industry publications and conferences.",
-        "Ensuring ethical AI development by assessing risks and compliance with data privacy and ethical frameworks.",
-        "Collaborating with cross-disciplinary teams to align research outcomes with stakeholder needs.",
-        "Delivering findings through technical publications and presentations.",
-        "Building an ERP system using Frappe Framework.",
-        "Conducted training sessions on web development using Python, Django, SQL, HTML, CSS, and JavaScript.",
-        "Preparing technical write ups for integrated APIs like Mpesa for secure payment solutions.",
-        "Guided students in Big Data Technologies.",
-        "Collaborated with stakeholders to align curriculum development with market needs.",
-        "Created engaging course materials to simplify complex technical concepts for learners.",
-      ],
-      skills: ["Leadership", "Strategic Planning", "Digital Transformation"],
-      icon: GiArchiveResearch
-    },
-    {
-      id: 2,
-      role: "Data Scientist & AI Lead",
-      company: "Guild Code Limited - Nairobi, kenya",
-      duration: "February 2024 - Recent",
-      startDate: "2024",
-      achievements: [
-        "Led end-to-end data science projects, from problem definition to model deployment.",
-        "Managed the entire data science lifecycle, including data collection, cleaning, modeling, and deployment.",
-        "Led a team of data scientists and AI engineers in delivering innovative solutions.",
-        "Designed and implemented machine learning models to solve business problems.",
-        "Collaborated with stakeholders to translate business requirements into technical solutions.",
-        "Communicated complex technical concepts to non-technical stakeholders effectively.",
-        "Designed and implemented data pipelines for efficient data processing and analysis.",
-      ],
-      skills: ["AI Systems Engineering", "Product Management", "LM Harnessing"],
-      icon: FaDatabase,
-    },
-    {
-      id: 3,
-      role: "Associate Product Manager",
-      company: "eProd Solutions Limited - Nairobi, kenya",
-      duration: "May 2023 - June 2024",
-      startDate: "2023",
-      achievements: [
-        "Regional Deployment: Managed feature deployments for agritech systems across East Africa, West Africa, and Afghanistan, coordinating with diverse regulatory bodies.",
-        "Initiated a data literacy program and mentored interns, strengthening the digital adoption ecosystem for regional enterprises.",
-        "Built dashboards for 20+ agribusinesses to improve supply-chain transparency and market access.",
-        "Conducted software testing and provided customer support for technology solutions.",
-        "Conducted in-depth analysis and extraction of clients' data using SQL.",
-        "Developed and managed reports and dashboards for clients utilizing Power BI and SQL.",
-        "Provided quality assurance and software testing support.",
-        "Quality Assurance and Software testing.",
-        "Offered client support services.",
-        "Trained clients on how to set up, install and operate the eprod Software.",
-      ],
-      skills: ["Operations Management", "Process Optimization", "Team Leadership"],
-      icon: FaUserInjured,
-    },
-    {
-      id: 4,
-      role: "Supervisor",
-      company: "Kazi Mtaani programme - Mombasa, kenya",
-      duration: "April 2020 - August 2021",
-      startDate: "2020",
-      achievements: [
-        "Analyzed and prepared Ziwa la ng'ombe ward community payment scheme.",
-        "Supervised Ziwa la ng'ombe and Kadzandani ward youths doing community-based activities.",
-        "Mentored Ziwa la ng'ombe and Kadzandani youth on entrepreneurship, digital and financial literacy.",
-      ],
-      skills: ["Operations Management", "Process Optimization", "Team Leadership"],
-      icon: GiWheelbarrow,
-    }
-].sort((a, b) => parseInt(b.startDate) - parseInt(a.startDate));
+  {
+    id: 1,
+    role: "Lead AI Systems Engineer",
+    company: "Guild Code — Nairobi, Kenya",
+    duration: "February 2023 – Present",
+    startDate: "2023",
+    achievements: [
+      "Architected and deployed production-ready agentic AI pipelines for autonomous decision-making under noisy, incomplete data conditions.",
+      "Built Sema Sasa: an end-to-end ASR system fine-tuned on African language speech data (Wav2Vec2 + T5), addressing linguistic exclusion — Winner, Deep Learning Indaba Community Challenge 2025.",
+      "Developed multilingual, code-switching AI agents for low-resource African languages across financial access and agribusiness domains.",
+      "Built eKuza: an AI-driven agribusiness management platform digitising smallholder farmer tracking and real-time payment automation.",
+      "Deployed production ML systems on GCP; built TypeScript-based API layers for model serving and real-time inference.",
+      "Championed an OpenSourceFirst architectural philosophy, advising regional startups on data sovereignty and preventing vendor lock-in.",
+    ],
+    skills: ["ASR", "Agentic AI", "GCP", "FastAPI", "PyTorch", "HuggingFace"],
+  },
+  {
+    id: 2,
+    role: "Research Scholar",
+    company: "iLabAfrica, Strathmore University — Nairobi, Kenya",
+    duration: "May 2024 – May 2026",
+    startDate: "2024",
+    achievements: [
+      "Leading autonomous modelling research for large-scale analytics, with focus on adaptive time-series and spatio-temporal systems.",
+      "Conducting Responsible AI and AI governance research, ensuring ethical compliance of deployed AI systems in sensitive domains (finance, public policy).",
+      "Developing adaptive modelling frameworks for learning under distributional shift and data scarcity.",
+      "Collaborating with multidisciplinary teams across mathematics, computer science, and biostatistics.",
+      "Applied research on credit scoring for unbanked populations using national financial access datasets (FinAccess).",
+      "Implemented SHAP and LIME explainability guardrails to eliminate proxy discrimination.",
+    ],
+    skills: ["Responsible AI", "Spatio-Temporal ML", "Bayesian Inference", "SHAP/LIME"],
+  },
+  {
+    id: 3,
+    role: "Associate Product Manager",
+    company: "eProd Solutions Limited — Nairobi, Kenya",
+    duration: "May 2023 – June 2024",
+    startDate: "2023.5",
+    achievements: [
+      "Owned the full SaaS product lifecycle for ERP modules used by 20+ agribusinesses across East and West Africa.",
+      "Integrated data-driven forecasting and predictive logistics systems into ERP platforms; utilised Power BI and SQL to drive a 20% improvement in system accuracy.",
+      "Translated complex logistics and payment workflows into technical user stories for engineering teams.",
+      "Unified fragmented data modules (inventory, logistics, sales) into single-source-of-truth architectures, eliminating 40% of manual intervention overhead.",
+      "Initiated a Data Literacy programme for interns and clients, reducing onboarding time by 30%.",
+    ],
+    skills: ["Product Management", "Power BI", "SQL", "Agile/Scrum", "ERP"],
+  },
+  {
+    id: 4,
+    role: "Election Project Manager (Data & System Operations)",
+    company: "Roman Solutions Limited — Machakos, Kenya",
+    duration: "February 2022 – March 2023",
+    startDate: "2022",
+    achievements: [
+      "Managed digital infrastructure for 7,000+ concurrent users; ensured system integrity, monitoring, and rapid incident response under mission-critical conditions.",
+      "Led cross-functional team under high-pressure timelines, achieving 100% execution of product deliverables.",
+      "Conducted training and outreach sessions for non-technical stakeholders; enforced strict regulatory and audit requirements.",
+    ],
+    skills: ["Project Management", "Data Infrastructure", "Compliance"],
+  },
+  {
+    id: 5,
+    role: "Data Analyst & Client Relations Officer",
+    company: "eProd Solutions Limited — Nairobi, Kenya",
+    duration: "September 2022 – May 2023",
+    startDate: "2022.7",
+    achievements: [
+      "Conducted in-depth analysis and extraction of clients' data using SQL.",
+      "Developed and managed reports and dashboards for clients utilizing Power BI and SQL.",
+      "Provided quality assurance, software testing, and client support services.",
+      "Trained clients on setup, installation, and operation of the eProd software.",
+    ],
+    skills: ["SQL", "Power BI", "QA", "Client Relations"],
+  },
+  {
+    id: 6,
+    role: "Research Enumerator",
+    company: "Nutrition International — Kiambu, Kenya",
+    duration: "January 2025 – February 2025",
+    startDate: "2025",
+    achievements: [
+      "Supported endline surveys in Kiambu County; reviewed data instruments and improved survey quality.",
+      "Trained community health workers, strengthening data reliability in real-world deployments.",
+    ],
+    skills: ["Survey Design", "Data Quality", "Field Research"],
+  },
+].sort((a, b) => parseFloat(b.startDate) - parseFloat(a.startDate));
+
+const earlyCareer = [
+  { role: "Software Engineer Intern", company: "eProd Solutions", duration: "January 2022 – February 2023" },
+  { role: "IT Intern", company: "Swahilipot Hub Foundation", duration: "January 2021 – April 2021" },
+];
 
 const ExperienceCard = ({ experience }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  ExperienceCard.propTypes = {
-    experience: PropTypes.shape({
-      icon: PropTypes.elementType.isRequired,
-      role: PropTypes.string.isRequired,
-      company: PropTypes.string.isRequired,
-      duration: PropTypes.string.isRequired,
-      achievements: PropTypes.arrayOf(PropTypes.string).isRequired,
-      skills: PropTypes.arrayOf(PropTypes.string).isRequired,
-    }).isRequired,
-  };
-
   return (
-    <article className="relative pb-12 last:pb-0">
-      <div className="flex gap-6">
+    <article className="relative pb-10 last:pb-0">
+      <div className="flex gap-5">
         <div className="flex flex-col items-center flex-shrink-0">
-          <div className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center">
-            <experience.icon className="text-gray-600 dark:text-gray-400" size={18} />
-          </div>
-          <div className="w-px flex-1 bg-gray-200 dark:bg-gray-800 mt-3" />
+          <div className="w-3 h-3 rounded-full bg-teal-500 dark:bg-teal-400 mt-2" />
+          <div className="w-px flex-1 bg-slate-200 dark:bg-slate-700 mt-2" />
         </div>
 
-        <div className="flex-1 pt-1">
+        <div className="flex-1 pt-0">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="w-full text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded"
+            className="w-full text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
             aria-expanded={isExpanded}
           >
-            <div className="flex items-start justify-between gap-4 mb-2">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white tracking-tight">
+            <div className="flex items-start justify-between gap-4 mb-1">
+              <h3 className="text-lg font-semibold text-navy-900 dark:text-white tracking-tight">
                 {experience.role}
               </h3>
-              <div className="flex-shrink-0 mt-1 text-gray-400 dark:text-gray-500 transition-transform duration-200" style={{ transform: isExpanded ? 'rotate(0deg)' : 'rotate(0deg)' }}>
-                {isExpanded ? <Minus size={18} /> : <Plus size={18} />}
+              <div className="flex-shrink-0 mt-1 text-slate-400">
+                {isExpanded ? <Minus size={16} /> : <Plus size={16} />}
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-gray-600 dark:text-gray-400">
-              <span className="font-medium group-hover:text-gray-900 dark:group-hover:text-gray-300 transition-colors inline-flex items-center gap-1">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-500 dark:text-slate-400">
+              <span className="font-medium text-teal-700 dark:text-teal-400 inline-flex items-center gap-1">
                 {experience.company}
                 <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
               </span>
-              <span className="text-gray-400 dark:text-gray-600">•</span>
+              <span className="text-slate-300 dark:text-slate-600">•</span>
               <span className="inline-flex items-center gap-1.5">
                 <Calendar size={13} />
                 {experience.duration}
@@ -138,31 +135,22 @@ const ExperienceCard = ({ experience }) => {
             </div>
           </button>
 
-          <div 
+          <div
             className="overflow-hidden transition-all duration-300 ease-out"
-            style={{
-              maxHeight: isExpanded ? '2000px' : '0',
-              opacity: isExpanded ? 1 : 0
-            }}
+            style={{ maxHeight: isExpanded ? '2000px' : '0', opacity: isExpanded ? 1 : 0 }}
           >
-            <div className="pt-6 space-y-6">
-              <div>
-                <ul className="space-y-2.5 text-gray-600 dark:text-gray-400 leading-relaxed">
-                  {experience.achievements.map((achievement, i) => (
-                    <li key={i} className="flex gap-3">
-                      <span className="text-gray-400 dark:text-gray-600 mt-2 flex-shrink-0">—</span>
-                      <span className="flex-1">{achievement}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="flex flex-wrap gap-2 pt-2">
+            <div className="pt-4 space-y-4">
+              <ul className="space-y-2 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                {experience.achievements.map((item, i) => (
+                  <li key={i} className="flex gap-3">
+                    <span className="text-slate-400 mt-0.5 flex-shrink-0">—</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-2 pt-1">
                 {experience.skills.map((skill, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700"
-                  >
+                  <span key={i} className="px-2.5 py-0.5 text-xs font-medium rounded-full border border-slate-200 dark:border-slate-600 text-slate-500 dark:text-slate-400">
                     {skill}
                   </span>
                 ))}
@@ -175,17 +163,39 @@ const ExperienceCard = ({ experience }) => {
   );
 };
 
+ExperienceCard.propTypes = {
+  experience: PropTypes.shape({
+    role: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
+    duration: PropTypes.string.isRequired,
+    achievements: PropTypes.arrayOf(PropTypes.string).isRequired,
+    skills: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+};
+
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 px-4 bg-white dark:bg-gray-900">
+    <section id="experience" className="py-16 px-4 bg-offwhite dark:bg-slate-900">
       <div className="max-w-3xl mx-auto">
+        <div className="mb-16">
+          {work_experiences.map((experience) => (
+            <ExperienceCard key={experience.id} experience={experience} />
+          ))}
+        </div>
+
         <div>
-          <h2 className="text-sm font-medium uppercase tracking-wider text-gray-500 dark:text-gray-500 mb-12">
-            Work Experience
-          </h2>
-          <div>
-            {work_experiences.map((experience) => (
-              <ExperienceCard key={experience.id} experience={experience} />
+          <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-4">
+            Early Career
+          </h3>
+          <div className="space-y-3">
+            {earlyCareer.map((item, i) => (
+              <div key={i} className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                <span className="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 flex-shrink-0" />
+                <span className="font-medium">{item.role}</span>
+                <span className="text-slate-400">—</span>
+                <span>{item.company}</span>
+                <span className="text-slate-400 text-xs ml-auto">{item.duration}</span>
+              </div>
             ))}
           </div>
         </div>

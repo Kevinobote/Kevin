@@ -3,22 +3,28 @@
 @tailwind utilities;
 
 :root {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  --color-navy: #1e293b;
+  --color-teal: #0d9488;
+  --color-offwhite: #faf9f7;
+  --color-charcoal: #334155;
 }
 
-/* Add to your Global CSS to smooth out the theme transition */
 body {
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@layer base {
+  body {
+    @apply bg-[#faf9f7] text-slate-700 antialiased;
+  }
+  .dark body {
+    @apply bg-slate-900 text-slate-200;
+  }
 }
 
 @layer utilities {
-  /* Subtle glass border for light mode, glowing border for dark */
   .themed-card-border {
-    @apply border-neutral-200 dark:border-white/10 hover:border-neutral-300 dark:hover:border-white/30;
-  }
-  
-  /* Noise pattern needs to be more subtle in light mode */
-  .bg-noise {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    @apply border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/30;
   }
 }
