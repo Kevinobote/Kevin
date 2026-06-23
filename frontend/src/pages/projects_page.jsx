@@ -7,7 +7,7 @@ const projects = [
     title: "Sema Sasa",
     subtitle: "Inclusive ASR for African Languages",
     description: "An end-to-end ASR system fine-tuned on African language speech data using Wav2Vec2 + T5, addressing linguistic exclusion for underserved communities. The system transcribes audio into text in multiple African languages and conducts sentiment analysis on the transcribed text.",
-    impact: "Winner — Deep Learning Indaba Community Challenge 2025, Kigali, Rwanda",
+    impact: "Winner: Deep Learning Indaba Community Challenge 2025, Kigali, Rwanda",
     tags: ["Wav2Vec2", "T5", "Low-Resource NLP", "Speech Recognition", "GCP"],
     github: "https://github.com/Kevinobote/Sema",
     featured: true,
@@ -17,7 +17,7 @@ const projects = [
     title: "Kalenjin ASR Baseline",
     subtitle: "First Documented Speech Recognition for Kalenjin",
     description: "Developed a two-stage fine-tuning strategy on Wav2Vec2-XLS-R for Kalenjin, an under-resourced Kenyan language. Integrated KenLM language model achieving a 55.3% relative CER reduction and 10.7% WER improvement. Establishes the first documented ASR baseline for this language.",
-    impact: "Accepted — AAIAC 2026 (IEEE Xplore), Dar es Salaam, Tanzania",
+    impact: "Accepted: AAIAC 2026 (IEEE Xplore), Dar es Salaam, Tanzania",
     tags: ["Wav2Vec2-XLS-R", "KenLM", "ASR", "Low-Resource", "IEEE"],
     github: null,
     featured: true,
@@ -27,7 +27,7 @@ const projects = [
     title: "Telecom Customer Churn ML Pipeline",
     subtitle: "End-to-End Production ML for B2B Telecom",
     description: "Full ML pipeline on 8,454 real B2B telecom accounts: dataset curation and feature engineering (14 to 22 variables), benchmarking 10 classifier families, SVMSMOTE resampling, post-hoc SHAP/LIME explainability, and FastAPI deployment with real-time and batch scoring.",
-    impact: "Published — American Journal of Networks and Communications, 2026",
+    impact: "Published: American Journal of Networks and Communications, 2026",
     tags: ["Classification", "SHAP/LIME", "FastAPI", "Feature Engineering"],
     github: null,
     featured: true,
@@ -35,25 +35,33 @@ const projects = [
   {
     id: 4,
     title: "eKuza",
-    subtitle: "AI-Driven Agribusiness Platform",
-    description: "An AI-driven agribusiness management platform digitising smallholder farmer tracking and real-time payment automation, deployed across East African agricultural value chains.",
-    impact: null,
-    tags: ["Agentic AI", "Agribusiness", "Real-Time Systems"],
+    subtitle: "AI-Driven Agribusiness Management Platform",
+    description: "A full-stack agribusiness management platform digitising smallholder farmer onboarding, produce tracking, and real-time payment automation. Built with AI-powered forecasting for yield prediction and logistics optimisation, deployed across East African agricultural value chains serving multiple cooperatives.",
+    impact: "Pilot, Guild Code",
     github: null,
     featured: false,
   },
   {
     id: 5,
-    title: "Transit Prediction (GNN + LSTM)",
-    subtitle: "Spatio-Temporal ML for Urban Mobility",
-    description: "Hybrid Graph Neural Network + LSTM architecture modelling complex spatio-temporal dependence structures in African urban transit networks for travel time prediction.",
-    impact: "Under Review — Spatio-Temporal Discovery Journal, 2026",
-    tags: ["GNN", "LSTM", "Spatio-Temporal ML", "Urban Transit"],
+    title: "GIE-POS",
+    subtitle: "Guild Integrated Enterprise Point-of-Sale System",
+    description: "Led the development of an enterprise-grade, offline-first POS and operational management platform for multi-service premises (Restaurant, Bar, Car Wash). Features unified sales and billing, centralized inventory with recipe-based deductions, supplier and procurement management, role-based access control, and executive dashboards with consolidated reporting across all business units.",
+    impact: "Pilot, Guild Code",
     github: null,
     featured: false,
   },
   {
     id: 6,
+    title: "Transit Prediction (GNN + LSTM)",
+    subtitle: "Spatio-Temporal ML for Urban Mobility",
+    description: "Hybrid Graph Neural Network + LSTM architecture modelling complex spatio-temporal dependence structures in African urban transit networks for travel time prediction.",
+    impact: "Under Review: Spatio-Temporal Discovery Journal, 2026",
+    tags: ["GNN", "LSTM", "Spatio-Temporal ML", "Urban Transit"],
+    github: null,
+    featured: false,
+  },
+  {
+    id: 7,
     title: "Wave Energy Farm Optimization",
     subtitle: "Renewable Energy + Optimization",
     description: "Optimization of wave energy converter placements using machine learning to maximize energy capture from ocean waves under uncertainty.",
@@ -82,7 +90,7 @@ const ProjectsPage = () => {
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
             The connective thread: building AI that holds up under noise, scarcity, and linguistic 
-            diversity — translating research into production systems for low-resource and multilingual contexts.
+            diversity. Translating research into production systems for low-resource and multilingual contexts.
           </p>
         </motion.div>
 

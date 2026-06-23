@@ -9,9 +9,18 @@ import alx from "./images/alx.png"
 import strathmore from "./images/strathmore.png"
 import exploreAi from "./images/exploreAi.webp"
 import eProd from "./images/eProd.png"
-import afrocom from "./images/afrocom.webp"
+import afrocom from "./images/afrocom2.jpeg"
 import ilab from "./images/ilabAfrica.png"
 import mksu from "./images/mksu.png"
+import genesys from "./images/genesys.jpeg"
+import wissa from "./images/wissa.jpeg"
+import apdk from "./images/apdk.jpeg"
+import roman from "./images/roman.jpeg"
+import redcross from "./images/redcross.jpeg"
+import swahilipot from "./images/swahilipot.jpeg"
+import watotogogreen from "./images/watotogogreen.jpeg"
+import lic from "./images/lic.jpeg"
+import guildcode from "./images/guildcode.jpeg"
 import nobert from "./images/team/nobert.jpeg";
 import chris from "./images/team/chris.jpeg";
 import immaculate from "./images/team/immaculate.jpeg";
@@ -36,6 +45,15 @@ export {
     afrocom,
     ilab,
     mksu,
+    genesys,
+    wissa,
+    apdk,
+    roman,
+    redcross,
+    swahilipot,
+    watotogogreen,
+    lic,
+    guildcode,
     nobert,
     chris,
     immaculate,

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, MapPin, ArrowRight, Calendar, AlertCircle, X } from 'lucide-react';
+import { Mail, MapPin, ArrowRight, Calendar, AlertCircle, X, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const ContactPage = () => {
@@ -64,11 +64,8 @@ const ContactPage = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Form */}
-          <motion.form
+          <form
             onSubmit={handleSubmit}
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
             className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 space-y-4"
           >
             <div>
@@ -116,7 +113,7 @@ const ContactPage = () => {
             >
               Send Message <ArrowRight className="h-4 w-4" />
             </button>
-          </motion.form>
+          </form>
 
           {/* Contact Info */}
           <motion.div
@@ -132,6 +129,10 @@ const ContactPage = () => {
                 <a href="mailto:kevinobote49@gmail.com" className="text-sm hover:text-teal-700">kevinobote49@gmail.com</a>
               </div>
               <div className="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+                <MessageCircle className="h-4 w-4 text-teal-600" />
+                <a href="https://wa.me/254700885748" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-teal-700">WhatsApp: +254 700 885 748</a>
+              </div>
+              <div className="flex items-center gap-3 text-slate-600 dark:text-slate-300">
                 <MapPin className="h-4 w-4 text-teal-600" />
                 <span className="text-sm">Nairobi, Kenya</span>
               </div>
@@ -143,13 +144,13 @@ const ContactPage = () => {
                 Prefer a conversation? Book a 15-minute introductory call.
               </p>
               <a
-                href="https://calendly.com/kevinobote49/15min"
+                href="https://calendar.app.google/UszKGyodyaZDg2K46"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-medium text-teal-700 dark:text-teal-400 hover:text-teal-800"
               >
                 <Calendar className="h-4 w-4" />
-                Book on Calendly
+                Book on Google Calendar
               </a>
             </div>
           </motion.div>

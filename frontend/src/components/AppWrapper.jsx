@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Navbar from './Navbar';
-import ContactSection from "../components/Contact";
 import { ThemeProvider } from '../contexts/theme-context';
 import BackToTop from './BackToTop';
 import AccessibilityMenu from './AccessibilityMenu';
@@ -47,7 +46,6 @@ const AppWrapper = ({ children }) => {
       <main>
         {children}
       </main>
-      <ContactSection />
       <Footer />
       <AccessibilityMenu />
       <BackToTop />

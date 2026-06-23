@@ -13,7 +13,7 @@ const publications = [
     doi: null,
     url: null,
     role: "Lead Author",
-    tags: ["Conference — Accepted"],
+    tags: ["Conference (Accepted)"],
     note: "First documented ASR baseline for Kalenjin; 55.3% relative CER reduction and 10.7% WER improvement.",
   },
   {

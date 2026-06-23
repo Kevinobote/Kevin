@@ -26,7 +26,7 @@ const CTASection = () => {
               Get in Touch <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href="https://calendly.com/kevinobote49/15min"
+              href="https://calendar.app.google/UszKGyodyaZDg2K46"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"

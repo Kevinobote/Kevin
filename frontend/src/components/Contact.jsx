@@ -212,7 +212,7 @@ const ContactSection = () => {
                     Let's talk.
                   </h2>
                   <p className="text-base sm:text-lg max-w-2xl text-slate-200 mt-4">
-                    Tell me about your project—consulting, development, or collaboration opportunities. I reply within one business day.
+                    Tell me about your project, consulting, development, or collaboration opportunities. I reply within one business day.
                   </p>
 
                   <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5">

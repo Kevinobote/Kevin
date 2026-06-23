@@ -6,6 +6,7 @@ import ResearchPage from './pages/research_page';
 import ProjectsPage from './pages/projects_page';
 import ExperiencePage from './pages/exp_page';
 import TeachingPage from './pages/teaching_page';
+import VolunteerPage from './pages/volunteer_page';
 import ContactPage from './pages/contact_page';
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/experience" element={<ExperiencePage />} />
             <Route path="/teaching" element={<TeachingPage />} />
+            <Route path="/volunteer" element={<VolunteerPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </Router>

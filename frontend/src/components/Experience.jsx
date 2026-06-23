@@ -1,17 +1,19 @@
 import { useState } from 'react';
 import { Calendar, ArrowUpRight, Plus, Minus } from 'lucide-react';
 import PropTypes from 'prop-types';
+import { logo, ilab, eProd, afrocom, mksu, roman } from '../assets';
 
 const work_experiences = [
   {
     id: 1,
     role: "Lead AI Systems Engineer",
-    company: "Guild Code — Nairobi, Kenya",
+    company: "Guild Code, Nairobi, Kenya",
     duration: "February 2023 – Present",
     startDate: "2023",
+    logo: logo,
     achievements: [
       "Architected and deployed production-ready agentic AI pipelines for autonomous decision-making under noisy, incomplete data conditions.",
-      "Built Sema Sasa: an end-to-end ASR system fine-tuned on African language speech data (Wav2Vec2 + T5), addressing linguistic exclusion — Winner, Deep Learning Indaba Community Challenge 2025.",
+      "Built Sema Sasa: an end-to-end ASR system fine-tuned on African language speech data (Wav2Vec2 + T5), addressing linguistic exclusion. Winner of the Deep Learning Indaba Community Challenge 2025.",
       "Developed multilingual, code-switching AI agents for low-resource African languages across financial access and agribusiness domains.",
       "Built eKuza: an AI-driven agribusiness management platform digitising smallholder farmer tracking and real-time payment automation.",
       "Deployed production ML systems on GCP; built TypeScript-based API layers for model serving and real-time inference.",
@@ -22,9 +24,10 @@ const work_experiences = [
   {
     id: 2,
     role: "Research Scholar",
-    company: "iLabAfrica, Strathmore University — Nairobi, Kenya",
+    company: "iLabAfrica, Strathmore University, Nairobi, Kenya",
     duration: "May 2024 – May 2026",
     startDate: "2024",
+    logo: ilab,
     achievements: [
       "Leading autonomous modelling research for large-scale analytics, with focus on adaptive time-series and spatio-temporal systems.",
       "Conducting Responsible AI and AI governance research, ensuring ethical compliance of deployed AI systems in sensitive domains (finance, public policy).",
@@ -38,9 +41,10 @@ const work_experiences = [
   {
     id: 3,
     role: "Associate Product Manager",
-    company: "eProd Solutions Limited — Nairobi, Kenya",
+    company: "eProd Solutions Limited, Nairobi, Kenya",
     duration: "May 2023 – June 2024",
     startDate: "2023.5",
+    logo: eProd,
     achievements: [
       "Owned the full SaaS product lifecycle for ERP modules used by 20+ agribusinesses across East and West Africa.",
       "Integrated data-driven forecasting and predictive logistics systems into ERP platforms; utilised Power BI and SQL to drive a 20% improvement in system accuracy.",
@@ -53,9 +57,10 @@ const work_experiences = [
   {
     id: 4,
     role: "Election Project Manager (Data & System Operations)",
-    company: "Roman Solutions Limited — Machakos, Kenya",
+    company: "Roman Solutions Limited, Machakos, Kenya",
     duration: "February 2022 – March 2023",
     startDate: "2022",
+    logo: roman,
     achievements: [
       "Managed digital infrastructure for 7,000+ concurrent users; ensured system integrity, monitoring, and rapid incident response under mission-critical conditions.",
       "Led cross-functional team under high-pressure timelines, achieving 100% execution of product deliverables.",
@@ -66,9 +71,10 @@ const work_experiences = [
   {
     id: 5,
     role: "Data Analyst & Client Relations Officer",
-    company: "eProd Solutions Limited — Nairobi, Kenya",
+    company: "eProd Solutions Limited, Nairobi, Kenya",
     duration: "September 2022 – May 2023",
     startDate: "2022.7",
+    logo: eProd,
     achievements: [
       "Conducted in-depth analysis and extraction of clients' data using SQL.",
       "Developed and managed reports and dashboards for clients utilizing Power BI and SQL.",
@@ -80,9 +86,10 @@ const work_experiences = [
   {
     id: 6,
     role: "Research Enumerator",
-    company: "Nutrition International — Kiambu, Kenya",
+    company: "Nutrition International, Kiambu, Kenya",
     duration: "January 2025 – February 2025",
     startDate: "2025",
+    logo: null,
     achievements: [
       "Supported endline surveys in Kiambu County; reviewed data instruments and improved survey quality.",
       "Trained community health workers, strengthening data reliability in real-world deployments.",
@@ -103,7 +110,13 @@ const ExperienceCard = ({ experience }) => {
     <article className="relative pb-10 last:pb-0">
       <div className="flex gap-5">
         <div className="flex flex-col items-center flex-shrink-0">
-          <div className="w-3 h-3 rounded-full bg-teal-500 dark:bg-teal-400 mt-2" />
+          {experience.logo ? (
+            <img src={experience.logo} alt="" className="w-10 h-10 rounded-full object-contain bg-white border border-slate-200 dark:border-slate-700 p-1" />
+          ) : (
+            <div className="w-10 h-10 rounded-full bg-teal-500 dark:bg-teal-400 flex items-center justify-center">
+              <span className="text-white dark:text-slate-900 text-xs font-bold">{experience.company.charAt(0)}</span>
+            </div>
+          )}
           <div className="w-px flex-1 bg-slate-200 dark:bg-slate-700 mt-2" />
         </div>
 
@@ -143,7 +156,7 @@ const ExperienceCard = ({ experience }) => {
               <ul className="space-y-2 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
                 {experience.achievements.map((item, i) => (
                   <li key={i} className="flex gap-3">
-                    <span className="text-slate-400 mt-0.5 flex-shrink-0">—</span>
+                    <span className="text-slate-400 mt-0.5 flex-shrink-0">•</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -192,7 +205,7 @@ const Experience = () => {
               <div key={i} className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
                 <span className="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 flex-shrink-0" />
                 <span className="font-medium">{item.role}</span>
-                <span className="text-slate-400">—</span>
+                <span className="text-slate-400">·</span>
                 <span>{item.company}</span>
                 <span className="text-slate-400 text-xs ml-auto">{item.duration}</span>
               </div>

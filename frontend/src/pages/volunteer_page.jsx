@@ -1,34 +1,34 @@
 import { motion } from 'framer-motion';
-import { logo, ilab, genesys, wissa, apdk } from '../assets';
+import { afrocom, genesys, wissa, apdk, redcross, swahilipot, watotogogreen, lic } from '../assets';
 
-const teachingExperience = [
+const volunteerExperience = [
   {
-    role: "Course Facilitator & Teaching Assistant",
-    org: "iLabAfrica, Strathmore University, Nairobi, Kenya",
-    period: "May 2024 – May 2026",
-    description: "Teaching assistant, facilitator, and course supporter for the CDAV, ICDS, and Professional AI programmes, supporting over 100+ working professionals. Facilitated instruction in data analysis, data science, machine learning, history of AI, CRISP-DM methodology, and foundational statistics. Delivered practical lessons on transformer architectures, data simulation, and applied ML.",
-    logo: ilab,
-  },
-  {
-    role: "Technical Training & Mentorship Lead",
-    org: "Guild Code, Nairobi, Kenya",
-    period: "February 2023 – Present",
-    description: "Providing technical training, mentorship, and capacity building within the Guild Code community. Guiding junior engineers and data scientists on production AI systems, ML engineering best practices, and professional development.",
-    logo: logo,
+    role: "Co-Creator & Data Science Lead",
+    org: "AfroCom, Nairobi, Kenya (Remote)",
+    period: "May 2024 – April 2025",
+    description: "Part-time role focused on data science leadership, research skills, and data mining within the AfroCom community initiative.",
+    logo: afrocom,
   },
   {
     role: "Data Analysis Path Lead",
     org: "Genesys Tech Hub, Pan-African (Remote)",
     period: "September 2024 – September 2025",
-    description: "Designed and developed the data analysis curriculum and course content for learners across Africa. Mentored and tutored data analysis students, providing personalised 1:1 guidance and technical support. Coordinated with fellow mentors and tutors to ensure cohesive and effective content delivery across the programme.",
+    description: "Designed and developed the data analysis curriculum and course content for learners across Africa. Mentored and tutored data analysis students, providing personalised 1:1 guidance and technical support.",
     logo: genesys,
   },
   {
-    role: "Web Development Mentor",
-    org: "Genesys Tech Hub",
-    period: "May 2022 – October 2023",
-    description: "Tutored and mentored students in the web development track, providing guidance on modern web technologies and emerging industry trends.",
-    logo: genesys,
+    role: "Research and Development Volunteer",
+    org: "Watoto Go Green, Nairobi, Kenya",
+    period: "March 2024 – March 2025",
+    description: "Focused on advancing Watoto Go Green's mission through innovative solutions, evidence-based practices, and capacity-building initiatives. Conducted grant applications and research across needs identification, program design, evidence generation, policy advocacy, partnership development, capacity building, innovation, knowledge sharing, monitoring and evaluation, and resource mobilization.",
+    logo: watotogogreen,
+  },
+  {
+    role: "Monitoring and Evaluation Specialist",
+    org: "Lessons in Conservation",
+    period: "May 2024 – August 2024",
+    description: "Analysed pre and post survey data to quantify knowledge gained by learners through conservation lessons. Produced comprehensive reports interpreting survey findings with clear statistics and visualisations. Proactively alerted management to concerning statistics and provided informed recommendations for lesson refinements.",
+    logo: lic,
   },
   {
     role: "Online Educator",
@@ -38,15 +38,36 @@ const teachingExperience = [
     logo: wissa,
   },
   {
+    role: "Web Development Mentor",
+    org: "Genesys Tech Hub",
+    period: "May 2022 – October 2023",
+    description: "Tutored and mentored students in the web development track, providing guidance on modern web technologies and emerging industry trends.",
+    logo: genesys,
+  },
+  {
     role: "Mathematics Tutor",
     org: "Association for the Physically Disabled of Kenya (APDK), Machakos Branch",
     period: "May 2021 – August 2021",
     description: "Volunteered as a mathematics tutor, teaching primary school students at the APDK Machakos Branch.",
     logo: apdk,
   },
+  {
+    role: "IT Support Specialist",
+    org: "Swahilipot Hub Foundation",
+    period: "January 2021 – March 2026",
+    description: "Organising and participating in IT hackathons. Providing back office support for the hub's technology initiatives.",
+    logo: swahilipot,
+  },
+  {
+    role: "Volunteer",
+    org: "Kenya Red Cross",
+    period: "August 2019 – Present",
+    description: "Emergency response operations during the COVID-19 pandemic. Delivered educational mentorship and organised community outreach programmes. Certified in First Aid through the Red Cross Foundation.",
+    logo: redcross,
+  },
 ];
 
-const TeachingPage = () => {
+const VolunteerPage = () => {
   return (
     <div className="min-h-screen bg-offwhite dark:bg-slate-900 pt-24 pb-20">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
@@ -57,16 +78,16 @@ const TeachingPage = () => {
           className="mb-12"
         >
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-navy-900 dark:text-white tracking-tight mb-4">
-            Teaching & Mentorship
+            Volunteering
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-            I believe the most interesting problems in AI won't get solved by a handful of 
-            well-resourced labs. They'll get solved by a lot more people having the tools to try.
+            Community service, conservation, humanitarian work, and capacity building 
+            across Africa.
           </p>
         </motion.div>
 
         <div className="space-y-6">
-          {teachingExperience.map((item, index) => {
+          {volunteerExperience.map((item, index) => {
             return (
               <motion.div
                 key={index}
@@ -101,4 +122,4 @@ const TeachingPage = () => {
   );
 };
 
-export default TeachingPage;
+export default VolunteerPage;

@@ -57,6 +57,24 @@ ROOT_URLCONF = 'backend.urls'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+    "OPTIONS",
+]
+
+CORS_ALLOW_HEADERS = [
+    "content-type",
+    "authorization",
+    "accept",
+    "origin",
+    "x-requested-with",
 ]
 
 TEMPLATES = [
@@ -113,7 +131,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Afica/Nairobi'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -130,12 +148,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Email settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = ''  # Your outgoing mail server
-EMAIL_PORT = 465  # SMTP Port for secure SSL
-EMAIL_USE_SSL = True  # Since you're using SMTP with SSL
-EMAIL_HOST_USER = ''  # Your email address
-EMAIL_HOST_PASSWORD = ''  # Email account's password  # Your email password or app-specific password
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-CONTACT_EMAIL = ''  # Where you want to receive contact form messages
+# Resend API (set RESEND_API_KEY environment variable)
+# export RESEND_API_KEY="re_your_api_key_here"

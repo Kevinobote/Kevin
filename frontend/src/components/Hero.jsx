@@ -103,33 +103,34 @@ const Hero = () => {
             </h2>
             <div className="prose prose-slate dark:prose-invert prose-lg max-w-none space-y-5 text-slate-600 dark:text-slate-300 leading-relaxed">
               <p>
-                I'm an explorer, dreamer, and builder — someone who's just as likely to be lost in a 
+                I'm an explorer, dreamer, and builder. Someone who's just as likely to be lost in a 
                 stochastic processes textbook as I am lost in thought under a clear night sky. 
-                Swimming, reading, stargazing, long walks in nature: these aren't side notes to my work, 
-                they're where most of my best thinking happens.
+                Swimming, reading, writing, poetry, stargazing, long walks in nature: these aren't 
+                side notes to my work. They calm my mind and bring me joy, and that's where most 
+                of my best thinking happens.
               </p>
               <p>
-                What drives me is an insatiable curiosity. I followed it from pure mathematics — topology, 
-                functional analysis, abstract algebra — into computer science, and from there into the part 
-                of AI that interests me most: building systems that actually work for people who've been left 
-                out of the AI conversation so far.
+                What drives me is an insatiable curiosity. I followed it from pure mathematics, through 
+                topology, functional analysis, and abstract algebra, into computer science, and from there 
+                into the part of AI that interests me most: building systems that actually work for people 
+                who've been left out of the AI conversation so far.
               </p>
               <p>
                 That's the thread running through my work: Sema Sasa, an ASR system for African languages 
                 built to address linguistic exclusion; published research on Swahili speech recognition and a 
                 documented ASR baseline for Kalenjin; and applied ML work on financial inclusion, credit scoring, 
-                and telecom analytics — all aimed at the same question: how do you build AI that holds up under 
+                and telecom analytics. All aimed at the same question: how do you build AI that holds up under 
                 noise, scarcity, and the kind of complexity that textbook datasets conveniently ignore?
               </p>
               <p>
-                I move between three registers fairly fluidly — research, engineering, and the product and 
+                I move between three registers fairly fluidly: research, engineering, and the product and 
                 people work that turns either into something real. I hold an MSc in Data Science and 
                 Analytics from Strathmore University, and I build production AI systems through Guild Code.
               </p>
               <p>
                 I've taught and mentored data science learners across Africa through iLabAfrica and Genesys 
                 Tech Hub, because I think the most interesting problems in this field won't get solved by a 
-                handful of well-resourced labs — they'll get solved by a lot more people having the tools to try.
+                handful of well-resourced labs. They'll get solved by a lot more people having the tools to try.
               </p>
             </div>
           </motion.div>
