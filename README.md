@@ -1,103 +1,99 @@
-# Kevin's Personal Portfolio
+# Kevin Obote — Personal Portfolio
 
-A modern and responsive personal portfolio website built by **Guild-Code**. This portfolio is designed to showcase Kevin's professional experience, projects, skills, and achievements in an elegant and organized layout.
+A modern, editorial-precision personal portfolio website built by **Guild Code**. Showcases Kevin's research, projects, professional experience, teaching, volunteering, and achievements.
 
-## Table of Contents
+## Live Site
 
-- [Demo](#demo)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Setup and Installation](#setup-and-installation)
-
----
-
-## Demo
-
-🌐 **Live Demo:** Yet for Deployment.
-
----
+🌐 **[kevin.guild-code.com](https://kevin.guild-code.com)**
 
 ## Features
 
-- **Fully Responsive Design**: Optimized for desktop, tablet, and mobile devices.
-- **Dynamic Sections**:
-  - **Hero**: Highlight personal information and bio.
-  - **Skills**: Display technical skills with visuals or animations.
-  - **Experience**: A timeline of work history and accomplishments.
-  - **Volunteering**: A timeline of volunteering history and accomplishments.
-  - **Projects**: Showcasing key projects with live links and details.
-  - **Contact Me**: Integrated contact form or email links.
-  - **Testimonials**: Testimonials from clients or colleagues.
-- **Theme Customization**: Easily change colors and fonts to match your personal branding.
-- **Social Media Integration**: Links to LinkedIn, GitHub, and other platforms.
-- **Animations**: Smooth transitions and interactions for an engaging user experience.
-- **SEO Optimized**: Optimized for search engines.
-- **Contact Emailing**: Integrated contact form to respond to the user inquiries.
+- **Editorial Precision Design**: Navy/teal palette, serif headings, generous whitespace
+- **Research & Publications**: Full publication list with DOIs, Google Scholar, and ORCID links
+- **Projects**: Flagship case studies (Sema Sasa, Kalenjin ASR, Telecom Churn ML Pipeline)
+- **Experience Timeline**: Verified professional history with company logos
+- **Teaching & Mentorship**: iLabAfrica, Guild Code, Genesys Tech Hub, WiSSAfrica, APDK
+- **Volunteering**: AfroCom, Watoto Go Green, Red Cross, Swahilipot Hub, and more
+- **Testimonials**: Real recommendations from colleagues
+- **Contact Form**: Powered by Resend API (emails to obote@guild-code.com)
+- **Responsive Design**: Optimized for desktop, tablet, and mobile
+- **Dark/Light Theme**: Toggle between modes
+- **CV Download**: Single canonical PDF
+
+## Technologies
+
+- **Frontend**: React.js, Vite, Tailwind CSS, Framer Motion
+- **Backend**: Python Django (REST API for contact form)
+- **Email**: Resend API
+- **Icons**: Lucide React, React Icons
+- **Hosting**: cPanel (LiteSpeed)
+
+## Project Structure
+
+```
+├── frontend/           # React frontend (Vite)
+│   ├── src/
+│   │   ├── components/ # Hero, Navbar, Footer, Experience, Testimonials, CTA
+│   │   ├── pages/      # Main, Research, Projects, Experience, Teaching, Volunteer, Contact
+│   │   ├── assets/     # Images, logos, icons
+│   │   └── config.js   # API URL configuration
+│   ├── .env            # Local dev API URL
+│   └── .env.production # Production API URL
+├── backend/            # Django backend
+│   ├── backend/        # Django settings, URLs
+│   ├── core/           # Contact API (views, models, serializers)
+│   ├── passenger_wsgi.py # cPanel WSGI entry point
+│   └── requirements.txt
+└── DEPLOYMENT.md       # Hosting instructions
+```
+
+## Local Development
+
+### Backend
+```bash
+cd backend
+pip install -r requirements.txt
+export RESEND_API_KEY="re_your_key"
+python manage.py migrate
+python manage.py runserver
+```
+
+### Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Visit [http://localhost:5173](http://localhost:5173)
+
+## Deployment (cPanel)
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for full instructions.
+
+## Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Home (hero, about, testimonials, CTA) |
+| `/research` | Publications with DOIs, Google Scholar, ORCID |
+| `/projects` | Flagship and other projects |
+| `/experience` | Professional timeline with logos |
+| `/teaching` | Teaching and mentorship roles |
+| `/volunteer` | Volunteering activities |
+| `/contact` | Contact form, WhatsApp, Google Calendar booking |
+
+## Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `VITE_API_URL` | Backend API base URL (frontend) |
+| `RESEND_API_KEY` | Resend API key (backend) |
+| `DJANGO_SECRET_KEY` | Django secret key (backend) |
+| `DEBUG` | Django debug mode (backend) |
+| `ALLOWED_HOSTS` | Allowed hostnames (backend) |
+| `CORS_ORIGINS` | Allowed CORS origins (backend) |
 
 ---
 
-## Technologies Used
-
-- **Frontend**: React.js
-- **Backend**: Python Django
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Icons**: [Lucide React](https://lucide.dev/icons/) / [React Icons](https://react-icons.github.io/react-icons/)
-
----
-
-## Setup and Installation
-
-To run this project locally, follow these steps:
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/h3nrk/kevin.git
-   ```
-2. **Navigate to the project directory**:
-   ```bash
-   cd kevin
-   ```
-3. **Navigate to the Backend directory**:
-   ```bash
-   cd backend
-   ```
-4. **Install dependencies**:
-   ```bash
-   pip install django djangorestframework django-cors-headers
-   ```
-5. **Setup Email Settings**
-   ```bash
-   # backend/settings.py
-
-   # Email settings
-   EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-   EMAIL_HOST = ''  # Your outgoing mail server
-   EMAIL_PORT = 465  # SMTP Port for secure SSL
-   EMAIL_USE_SSL = True  # Since you're using SMTP with SSL
-   EMAIL_HOST_USER = ''  # Your email address
-   EMAIL_HOST_PASSWORD = ''  # Email account's password  # Your email password or app-specific password
-   DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-   CONTACT_EMAIL = ''  # Where you want to receive contact form messages
-   ```
-6. **Start the development server**:
-   ```bash
-   python manage.py runserver
-   ```
-7. **Navigate to the Frontend directory**:
-   ```bash
-   cd ../frontend
-   ```
-8.  **Install dependencies**:
-   ```bash
-   npm install  or yarn 
-   ```
-9. **Start the development server**:
-   ```bash
-   npm run dev or yarn dev
-   ```
-10. **Open your browser**:
-   Visit [http://localhost:5173](http://localhost:5173) to view the portfolio.
-
----
-
-Thank you for checking out this project! I hope you find it useful and inspiring. Feel free to contribute, provide feedback, or reach out with any questions. 😊
+Powered by [Guild Code](https://guild-code.com)
