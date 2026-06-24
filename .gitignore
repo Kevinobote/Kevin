@@ -1,1 +1,9 @@
 __pycache__/
+*.pyc
+backend/db.sqlite3
+*.zip
+
+# Root-level source files (not code)
+/*.pdf
+/*.jpeg
+/*.png
