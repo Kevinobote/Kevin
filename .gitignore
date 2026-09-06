@@ -27,7 +27,10 @@ frontend/dist/
 /plan/
 /improvements.txt
 
-# Root-level source material (design docs, CVs, logo originals) kept locally, not published
+# Local-only material: design docs, CV originals, logo source files, deploy bundles
+/_local/
+
+# Root-level source material kept locally, not published
 /*.pdf
 /*.jpeg
 /*.png
