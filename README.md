@@ -1,99 +1,110 @@
-# Kevin Obote — Personal Portfolio
+# Kevin Obote: Personal Portfolio
 
-A modern, editorial-precision personal portfolio website built by **Guild Code**. Showcases Kevin's research, projects, professional experience, teaching, volunteering, and achievements.
+Personal portfolio site for Kevin Obote: AI researcher and engineer, Nairobi. Covers research and
+publications, project case studies, professional experience, teaching, and volunteering, in a calm
+editorial design.
 
-## Live Site
+**Live:** [kevin.guild-code.com](https://kevin.guild-code.com)
 
-🌐 **[kevin.guild-code.com](https://kevin.guild-code.com)**
+## Tech stack
 
-## Features
+| Layer | Tools |
+| --- | --- |
+| Frontend | React 18, Vite 6, Tailwind CSS 3, Framer Motion, React Router 7 |
+| Fonts | Fraunces (headings), Inter (body), JetBrains Mono (metrics/DOIs) |
+| Icons | Lucide React, React Icons |
+| Backend (optional) | Django 4.2 + DRF, Resend API for the contact email |
+| Hosting | DirectAdmin / LiteSpeed shared hosting, served as static files |
 
-- **Editorial Precision Design**: Navy/teal palette, serif headings, generous whitespace
-- **Research & Publications**: Full publication list with DOIs, Google Scholar, and ORCID links
-- **Projects**: Flagship case studies (Sema Sasa, Kalenjin ASR, Telecom Churn ML Pipeline)
-- **Experience Timeline**: Verified professional history with company logos
-- **Teaching & Mentorship**: iLabAfrica, Guild Code, Genesys Tech Hub, WiSSAfrica, APDK
-- **Volunteering**: AfroCom, Watoto Go Green, Red Cross, Swahilipot Hub, and more
-- **Testimonials**: Real recommendations from colleagues
-- **Contact Form**: Powered by Resend API (emails to obote@guild-code.com)
-- **Responsive Design**: Optimized for desktop, tablet, and mobile
-- **Dark/Light Theme**: Toggle between modes
-- **CV Download**: Single canonical PDF
+## How the contact form works
 
-## Technologies
+The deployed site is **fully static**. The contact form composes a pre-filled email in the
+visitor's mail client (`mailto:`), so no server is required. The Django app in `backend/` is an
+optional upgrade for a true server-side form (it emails via Resend); it is not deployed by default.
 
-- **Frontend**: React.js, Vite, Tailwind CSS, Framer Motion
-- **Backend**: Python Django (REST API for contact form)
-- **Email**: Resend API
-- **Icons**: Lucide React, React Icons
-- **Hosting**: cPanel (LiteSpeed)
-
-## Project Structure
+## Project structure
 
 ```
-├── frontend/           # React frontend (Vite)
-│   ├── src/
-│   │   ├── components/ # Hero, Navbar, Footer, Experience, Testimonials, CTA
-│   │   ├── pages/      # Main, Research, Projects, Experience, Teaching, Volunteer, Contact
-│   │   ├── assets/     # Images, logos, icons
-│   │   └── config.js   # API URL configuration
-│   ├── .env            # Local dev API URL
-│   └── .env.production # Production API URL
-├── backend/            # Django backend
-│   ├── backend/        # Django settings, URLs
-│   ├── core/           # Contact API (views, models, serializers)
-│   ├── passenger_wsgi.py # cPanel WSGI entry point
-│   └── requirements.txt
-└── DEPLOYMENT.md       # Hosting instructions
+frontend/
+  index.html            # document head: SEO, Open Graph, JSON-LD, fonts, theme bootstrap
+  public/
+    .htaccess           # SPA routing, caching, compression, security headers
+    robots.txt
+    sitemap.xml
+    Kevin_Obote.pdf     # downloadable CV
+  src/
+    App.jsx             # routes
+    components/          # Hero, Navbar, Footer, Experience, Testimonials, CTA, ...
+    pages/               # main, about, research, projects, experience, teaching, volunteer, contact
+    data/socials.js      # single source of truth for external links
+    contexts/            # theme (light default, follows OS, remembers choice)
+    assets/              # images and logos
+
+backend/                # optional Django contact API (not deployed by default)
+  backend/               # settings, urls
+  core/                  # ContactView, model, serializer
+  passenger_wsgi.py      # WSGI entry point for Passenger hosts
+  requirements.txt
+
+DEPLOYMENT.md           # step-by-step deploy notes for DirectAdmin
 ```
 
-## Local Development
-
-### Backend
-```bash
-cd backend
-pip install -r requirements.txt
-export RESEND_API_KEY="re_your_key"
-python manage.py migrate
-python manage.py runserver
-```
+## Local development
 
 ### Frontend
+
 ```bash
 cd frontend
 npm install
-npm run dev
+npm run dev            # http://localhost:5173
 ```
 
-Visit [http://localhost:5173](http://localhost:5173)
+> Note: this project pins `esbuild` to `0.25.10` via `overrides` in `package.json` because
+> `0.24.x` crashes on some Linux machines. Keep the override until Vite ships a newer base esbuild.
 
-## Deployment (cPanel)
+### Backend (only if you want the server-side contact form)
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for full instructions.
+```bash
+cd backend
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+export RESEND_API_KEY="re_your_key"
+export DEBUG=True
+python manage.py migrate
+python manage.py runserver        # http://127.0.0.1:8000
+```
 
-## Pages
+## Build
 
-| Route | Description |
-|-------|-------------|
-| `/` | Home (hero, about, testimonials, CTA) |
+```bash
+cd frontend
+npm run build          # outputs to frontend/build/
+```
+
+`build/` contains everything to deploy, including `.htaccess`, `robots.txt`, `sitemap.xml` and the
+CV PDF. Upload the **contents** of that folder to the site's document root. See
+[DEPLOYMENT.md](DEPLOYMENT.md).
+
+## Routes
+
+| Route | Content |
+| --- | --- |
+| `/` | Hero, about teaser, testimonials, call to action |
+| `/about` | Full bio, current roles, CV download |
 | `/research` | Publications with DOIs, Google Scholar, ORCID |
-| `/projects` | Flagship and other projects |
-| `/experience` | Professional timeline with logos |
+| `/projects` | Flagship case studies plus other work |
+| `/experience` | Professional timeline with company logos |
 | `/teaching` | Teaching and mentorship roles |
-| `/volunteer` | Volunteering activities |
-| `/contact` | Contact form, WhatsApp, Google Calendar booking |
+| `/volunteer` | Volunteering history |
+| `/contact` | Contact form (mailto), WhatsApp, calendar booking |
 
-## Environment Variables
+## Environment variables
 
-| Variable | Description |
-|----------|-------------|
-| `VITE_API_URL` | Backend API base URL (frontend) |
-| `RESEND_API_KEY` | Resend API key (backend) |
-| `DJANGO_SECRET_KEY` | Django secret key (backend) |
-| `DEBUG` | Django debug mode (backend) |
-| `ALLOWED_HOSTS` | Allowed hostnames (backend) |
-| `CORS_ORIGINS` | Allowed CORS origins (backend) |
-
----
-
-Powered by [Guild Code](https://guild-code.com)
+| Variable | Where | Purpose |
+| --- | --- | --- |
+| `VITE_API_URL` | frontend `.env` | Backend base URL. Only used if the Django backend is deployed. |
+| `RESEND_API_KEY` | backend | Resend API key for sending contact emails. |
+| `DJANGO_SECRET_KEY` | backend | Django secret. |
+| `DEBUG` | backend | `True` locally, `False` in production. |
+| `ALLOWED_HOSTS` | backend | Comma-separated hostnames. |
+| `CORS_ORIGINS` | backend | Comma-separated allowed origins. |

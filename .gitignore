@@ -1,9 +1,33 @@
+# Python
 __pycache__/
 *.pyc
+.venv/
+venv/
+*.sqlite3
 backend/db.sqlite3
+
+# Node / build output
+node_modules/
+frontend/build/
+frontend/dist/
+*.local
+
+# Deploy bundles / archives
 *.zip
 
-# Root-level source files (not code)
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+
+# Claude Code local files
+.claude/
+
+# Internal working notes (not part of the published project)
+/plan/
+/improvements.txt
+
+# Root-level source material (design docs, CVs, logo originals) kept locally, not published
 /*.pdf
 /*.jpeg
 /*.png

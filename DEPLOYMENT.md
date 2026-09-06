@@ -1,74 +1,71 @@
-# Deployment Guide: cPanel Hosting
+# Deployment
 
-## Frontend (Static Site)
+The site deploys as **static files**. No server-side runtime is required for the current build
+(the contact form uses `mailto:`).
 
-The frontend builds to `frontend/build/`. Upload this entire folder to your cPanel `public_html` (or subdomain directory).
+## 1. Build
 
-### Steps:
-1. Build: `cd frontend && npm run build`
-2. Upload the contents of `frontend/build/` to your cPanel document root
-3. The `.htaccess` file handles SPA routing (all paths serve index.html)
-4. Make sure `Kevin_Obote.pdf` is in the root of the uploaded folder
+```bash
+cd frontend
+npm install
+npm run build
+```
 
-### Environment:
-- Edit `frontend/.env.production` before building:
-  ```
-  VITE_API_URL=https://api.kevin.guild-code.com
-  ```
+Output lands in `frontend/build/` and includes `index.html`, hashed `assets/`, `.htaccess`,
+`robots.txt`, `sitemap.xml`, `Kevin_Obote.pdf`, and `images/`.
 
----
+Optional convenience zip:
 
-## Backend (Django API)
+```bash
+cd frontend/build && zip -r ../kevin-frontend.zip . && zip ../kevin-frontend.zip .htaccess
+```
 
-### Option A: Python App on cPanel
+(The second command is needed because zip skips dotfiles by default.)
 
-1. In cPanel, go to **Setup Python App**
-2. Create a new app:
-   - Python version: 3.10+
-   - Application root: `backend`
-   - Application URL: `api.kevin.guild-code.com` (or a subdirectory)
-   - Application startup file: `passenger_wsgi.py`
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Set environment variables in cPanel:
-   ```
-   RESEND_API_KEY=re_your_key_here
-   DJANGO_SECRET_KEY=your-random-secret-key
-   DEBUG=False
-   ALLOWED_HOSTS=api.kevin.guild-code.com
-   CORS_ORIGINS=https://kevin.guild-code.com
-   ```
-5. Run migrations:
-   ```bash
-   python manage.py migrate
+## 2. Upload (DirectAdmin)
+
+1. **File Manager** -> `domains/guild-code.com/public_html/kevin/`.
+2. Empty the folder.
+3. Upload `kevin-frontend.zip`, then **Extract** it in place. Files must sit directly in `kevin/`
+   (so `kevin/index.html`, not `kevin/build/index.html`). Delete the zip afterward.
+4. Turn on **Show hidden files** and confirm `.htaccess` is present. If DirectAdmin's extractor
+   skipped it, create it manually with this content:
+
+   ```apache
+   <IfModule mod_rewrite.c>
+     RewriteEngine On
+     RewriteBase /
+     RewriteRule ^index\.html$ - [L]
+     RewriteCond %{REQUEST_FILENAME} !-f
+     RewriteCond %{REQUEST_FILENAME} !-d
+     RewriteRule . /index.html [L]
+   </IfModule>
+   ErrorDocument 404 /index.html
    ```
 
-### Option B: Separate VPS / Cloud
+   Without it, refreshing any route other than `/` returns 404.
 
-If cPanel doesn't support Python well, deploy the backend on:
-- Railway (free tier)
-- Render
-- A small VPS with gunicorn + nginx
+## 3. SSL
 
----
+DirectAdmin -> **SSL Certificates** -> select `kevin.guild-code.com`. The `*.guild-code.com`
+wildcard certificate already covers the subdomain. Enable **Force HTTPS redirect**.
 
-## passenger_wsgi.py (for cPanel)
+## 4. Verify
 
-Already included in the backend folder.
+```bash
+curl -I https://kevin.guild-code.com/
+curl -o /dev/null -w "%{http_code}\n" https://kevin.guild-code.com/research   # expect 200 (SPA rewrite)
+curl -o /dev/null -w "%{http_code}\n" https://kevin.guild-code.com/sitemap.xml
+```
 
----
+## Optional: server-side contact form (Django)
 
-## Production Checklist
+Only needed if you want form submissions handled server-side instead of via `mailto:`.
 
-- [ ] Set RESEND_API_KEY environment variable
-- [ ] Set DJANGO_SECRET_KEY (generate a random one)
-- [ ] Set DEBUG=False
-- [ ] Set ALLOWED_HOSTS to your domain
-- [ ] Set CORS_ORIGINS to your frontend domain
-- [ ] Update .env.production with correct API URL
-- [ ] Run `npm run build` after updating .env.production
-- [ ] Upload build folder to cPanel
-- [ ] Test contact form
-- [ ] Verify CV download works
+1. Set up a Python app in DirectAdmin (CloudLinux "Setup Python App" or Passenger), application
+   startup file `passenger_wsgi.py`, mounted so requests to `/api` reach Django.
+2. `pip install -r requirements.txt` and `python manage.py migrate` in the app environment.
+3. Set environment variables: `RESEND_API_KEY`, `DJANGO_SECRET_KEY`, `DEBUG=False`,
+   `ALLOWED_HOSTS=kevin.guild-code.com`, `CORS_ORIGINS=https://kevin.guild-code.com`.
+4. Point `frontend/.env.production` `VITE_API_URL` at `https://kevin.guild-code.com`, rebuild,
+   redeploy, and restore the `fetch`-based submit handler in `src/pages/contact_page.jsx`.
