@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, animate } from "framer-motion";
 import { Star } from "lucide-react";
 
@@ -13,14 +13,6 @@ import derek from "../assets/images/team/derek.jpeg";
 import norbert from "../assets/images/team/nobert.jpeg";
 import stephen from "../assets/images/team/stephen.jpeg";
 import immaculate from "../assets/images/team/immaculate.jpeg";
-
-/* =======================
-   CONSTANTS
-   ======================= */
-const FULL_ASPECT_RATIO = 16 / 9;
-const COLLAPSED_ASPECT_RATIO = 1 / 3;
-const MARGIN = 2;
-const GAP = 2;
 
 /* =======================
    COMPONENT
@@ -127,25 +119,25 @@ const Testimonials = () => {
   }, [index, isDragging, x]);
 
   return (
-    <section className="w-full bg-slate-50 py-20">
+    <section className="w-full bg-offwhite dark:bg-slate-900 py-20">
       <div className="mx-auto max-w-7xl px-4">
         {/* Header */}
         <div className="mb-12 text-center">
           <div className="mb-3 flex justify-center gap-2">
-            <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
-            <span className="text-sm uppercase tracking-wider text-slate-600">
+            <Star className="h-5 w-5 fill-teal-500 text-teal-500" />
+            <span className="text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400 font-medium">
               Testimonials
             </span>
           </div>
-          <h2 className="text-3xl font-bold text-slate-900">
-            What People Say About Me
+          <h2 className="font-serif text-3xl font-bold text-navy-900 dark:text-white tracking-tight">
+            What People Say
           </h2>
         </div>
 
         {/* Carousel */}
         <div
           ref={containerRef}
-          className="relative overflow-hidden rounded-2xl bg-white border"
+          className="relative overflow-hidden rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700"
         >
           <motion.div
             className="flex"
@@ -176,22 +168,22 @@ const Testimonials = () => {
                   {Array.from({ length: t.rating }).map((_, i) => (
                     <Star
                       key={i}
-                      className="h-5 w-5 fill-amber-400 text-amber-400"
+                      className="h-5 w-5 fill-teal-500 text-teal-500"
                     />
                   ))}
                 </div>
 
-                <p className="text-xl text-slate-700 mb-8">“{t.content}”</p>
+                <p className="text-xl font-serif text-slate-700 dark:text-slate-200 mb-8">“{t.content}”</p>
 
                 <img
                   src={t.image}
                   alt={t.author}
-                  className="mx-auto h-16 w-16 rounded-full object-cover border"
+                  className="mx-auto h-16 w-16 rounded-full object-cover border border-slate-200 dark:border-slate-700"
                 />
 
-                <p className="mt-3 font-semibold text-slate-900">{t.author}</p>
-                <p className="text-sm text-slate-600">{t.role}</p>
-                <p className="mt-1 text-xs text-slate-500">{t.date}</p>
+                <p className="mt-3 font-semibold text-navy-900 dark:text-white">{t.author}</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">{t.role}</p>
+                <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">{t.date}</p>
               </div>
             ))}
           </motion.div>
@@ -218,7 +210,7 @@ function Thumbnails({ testimonials, index, slideToIndex }) {
           key={t.id}
           onClick={() => slideToIndex(i)}
           className={`h-full rounded-lg overflow-hidden border-2 transition-all duration-300 ${
-            i === index ? "border-blue-500 scale-105" : "border-transparent scale-100"
+            i === index ? "border-teal-500 scale-105" : "border-transparent scale-100"
           }`}
         >
           <img

@@ -6,6 +6,7 @@ import { useTheme } from "../contexts/theme-context";
 const Navbar = () => {
   const navItems = [
     { name: "Home", link: "/" },
+    { name: "About", link: "/about" },
     { name: "Research", link: "/research" },
     { name: "Projects", link: "/projects" },
     { name: "Experience", link: "/experience" },

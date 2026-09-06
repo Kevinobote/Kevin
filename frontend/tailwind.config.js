@@ -32,9 +32,9 @@ export default {
         offwhite: '#faf9f7',
       },
       fontFamily: {
-        serif: ['Georgia', 'Cambria', '"Times New Roman"', 'serif'],
+        serif: ['Fraunces', 'Georgia', 'Cambria', '"Times New Roman"', 'serif'],
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+        mono: ['"JetBrains Mono"', 'Fira Code', 'ui-monospace', 'monospace'],
       },
     },
   },

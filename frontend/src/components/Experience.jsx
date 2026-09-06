@@ -1,9 +1,24 @@
 import { useState } from 'react';
 import { Calendar, ArrowUpRight, Plus, Minus } from 'lucide-react';
 import PropTypes from 'prop-types';
-import { logo, ilab, eProd, afrocom, mksu, roman } from '../assets';
+import { logo, ilab, eProd, roman, msingiai } from '../assets';
 
 const work_experiences = [
+  {
+    id: 0,
+    role: "Cofounder & Technical Lead (CTO)",
+    company: "MsingiAI, Nairobi, Kenya",
+    duration: "July 2026 – Present",
+    startDate: "2026.6",
+    logo: msingiai,
+    achievements: [
+      "Co-founded MsingiAI and lead its technical direction as CTO, with ownership of Sauti, a dedicated Swahili speech model (ASR + TTS) built to serve as an infrastructure layer for African enterprise voice applications.",
+      "Leading technical execution across active enterprise pilot engagements, including Hello Tractor and Shamba Records.",
+      "Driving the platform and website revamp, and shaping the ongoing R&D roadmap for Sauti alongside the AkiliCode open-weights research line.",
+      "Working alongside co-founders Gilbert Korir (CEO) and Irene Korir (Head of Operations), and a research and engineering team spanning speech AI, infrastructure, and DevOps.",
+    ],
+    skills: ["Speech AI", "ASR/TTS", "Technical Leadership", "Enterprise AI"],
+  },
   {
     id: 1,
     role: "Lead AI Systems Engineer",
@@ -83,22 +98,10 @@ const work_experiences = [
     ],
     skills: ["SQL", "Power BI", "QA", "Client Relations"],
   },
-  {
-    id: 6,
-    role: "Research Enumerator",
-    company: "Nutrition International, Kiambu, Kenya",
-    duration: "January 2025 – February 2025",
-    startDate: "2025",
-    logo: null,
-    achievements: [
-      "Supported endline surveys in Kiambu County; reviewed data instruments and improved survey quality.",
-      "Trained community health workers, strengthening data reliability in real-world deployments.",
-    ],
-    skills: ["Survey Design", "Data Quality", "Field Research"],
-  },
 ].sort((a, b) => parseFloat(b.startDate) - parseFloat(a.startDate));
 
 const earlyCareer = [
+  { role: "Research Enumerator", company: "Nutrition International, Kiambu", duration: "January 2025 – February 2025" },
   { role: "Software Engineer Intern", company: "eProd Solutions", duration: "January 2022 – February 2023" },
   { role: "IT Intern", company: "Swahilipot Hub Foundation", duration: "January 2021 – April 2021" },
 ];

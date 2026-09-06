@@ -1,19 +1,8 @@
 import { ArrowRight } from 'lucide-react';
-import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { FaXTwitter, FaSquareGithub } from "react-icons/fa6";
-import { BiLogoGmail } from "react-icons/bi";
-import { SiGooglescholar, SiOrcid } from 'react-icons/si';
+import { socials, contactLinks } from '../data/socials';
 
 const Footer = () => {
-  const socialLinks = [
-    { icon: FaLinkedin, href: "https://www.linkedin.com/in/kevinobote/", label: "LinkedIn" },
-    { icon: FaSquareGithub, href: "https://github.com/Kevinobote", label: "GitHub" },
-    { icon: FaXTwitter, href: "https://x.com/KevinObote6", label: "X" },
-    { icon: SiGooglescholar, href: "https://scholar.google.com/citations?user=QzMwc7IAAAAJ&hl=en", label: "Google Scholar" },
-    { icon: SiOrcid, href: "https://orcid.org/0009-0000-7099-2154", label: "ORCID" },
-    { icon: BiLogoGmail, href: "mailto:kevinobote49@gmail.com", label: "Email" },
-    { icon: FaWhatsapp, href: "https://wa.me/254700885748", label: "WhatsApp" },
-  ];
+  const socialLinks = [...socials, ...contactLinks];
 
   const expertise = [
     "AI & Speech Technology",
@@ -24,6 +13,7 @@ const Footer = () => {
   ];
 
   const siteLinks = [
+    { label: "About", href: "/about" },
     { label: "Research", href: "/research" },
     { label: "Projects", href: "/projects" },
     { label: "Experience", href: "/experience" },

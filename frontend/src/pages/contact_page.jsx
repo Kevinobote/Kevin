@@ -1,31 +1,24 @@
 import { useState } from 'react';
 import { Mail, MapPin, ArrowRight, Calendar, AlertCircle, X, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { API_BASE_URL } from '../config';
+
+const CONTACT_EMAIL = 'kevinobote49@gmail.com';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [website, setWebsite] = useState(''); // honeypot: real users never fill this
   const [notification, setNotification] = useState(null);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch(`${API_BASE_URL}/api/contact/`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      const data = await response.json();
-      if (response.ok) {
-        setFormData({ name: '', email: '', message: '' });
-        setNotification({ type: 'success', text: 'Message sent successfully!' });
-      } else {
-        setNotification({ type: 'error', text: data.error || 'Failed to send message.' });
-      }
-    } catch {
-      setNotification({ type: 'error', text: 'Failed to send message. Please try again.' });
-    }
-    setTimeout(() => setNotification(null), 5000);
+    if (website) return; // silently drop likely bot submissions
+    const subject = encodeURIComponent(`Portfolio enquiry from ${formData.name}`);
+    const body = encodeURIComponent(
+      `${formData.message}\n\n--\nFrom: ${formData.name}\nEmail: ${formData.email}`
+    );
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    setNotification({ type: 'success', text: 'Opening your email app to send the message…' });
+    setTimeout(() => setNotification(null), 6000);
   };
 
   return (
@@ -59,7 +52,9 @@ const ContactPage = () => {
             Contact
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-            Interested in collaboration, research partnerships, or consulting? I typically reply within one business day.
+            Interested in collaboration, research partnerships, or consulting? Fill in the form
+            below and it will open in your email app ready to send, or reach me directly using
+            the details on the right. I typically reply within one business day.
           </p>
         </motion.div>
 
@@ -69,6 +64,17 @@ const ContactPage = () => {
             onSubmit={handleSubmit}
             className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 space-y-4"
           >
+            {/* Honeypot field: hidden from real users, catches simple bots */}
+            <input
+              type="text"
+              name="website"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="absolute left-[-9999px] w-px h-px opacity-0"
+            />
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Name</label>
               <input
@@ -112,7 +118,7 @@ const ContactPage = () => {
               type="submit"
               className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-navy-900 dark:bg-white text-white dark:text-navy-900 px-5 py-3 text-sm font-medium hover:bg-navy-800 dark:hover:bg-slate-100 transition-colors"
             >
-              Send Message <ArrowRight className="h-4 w-4" />
+              Compose Email <ArrowRight className="h-4 w-4" />
             </button>
           </form>
 

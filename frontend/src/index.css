@@ -4,8 +4,8 @@
 
 :root {
   scroll-behavior: smooth;
-  --color-navy: #1e293b;
-  --color-teal: #0d9488;
+  --color-navy: #102a43;
+  --color-teal: #199473;
   --color-offwhite: #faf9f7;
   --color-charcoal: #334155;
 }
@@ -16,15 +16,32 @@ body {
 
 @layer base {
   body {
-    @apply bg-[#faf9f7] text-slate-700 antialiased;
+    @apply bg-[#faf9f7] text-slate-700 font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
   .dark body {
     @apply bg-slate-900 text-slate-200;
+  }
+  h1, h2, h3, h4 {
+    font-feature-settings: "ss01";
   }
 }
 
 @layer utilities {
   .themed-card-border {
     @apply border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/30;
+  }
+}
+
+/* Respect users who ask for less motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

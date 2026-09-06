@@ -21,6 +21,7 @@ import swahilipot from "./images/swahilipot.jpeg"
 import watotogogreen from "./images/watotogogreen.jpeg"
 import lic from "./images/lic.jpeg"
 import guildcode from "./images/guildcode.jpeg"
+import msingiai from "./images/msingiai.jpeg"
 import nobert from "./images/team/nobert.jpeg";
 import chris from "./images/team/chris.jpeg";
 import immaculate from "./images/team/immaculate.jpeg";
@@ -54,6 +55,7 @@ export {
     watotogogreen,
     lic,
     guildcode,
+    msingiai,
     nobert,
     chris,
     immaculate,

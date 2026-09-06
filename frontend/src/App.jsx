@@ -2,6 +2,7 @@ import AppWrapper from './components/AppWrapper';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Main from './pages/main_page';
+import AboutPage from './pages/about_page';
 import ResearchPage from './pages/research_page';
 import ProjectsPage from './pages/projects_page';
 import ExperiencePage from './pages/exp_page';
@@ -16,6 +17,7 @@ const App = () => {
         <Router>
           <Routes>
             <Route path="/" element={<Main />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/research" element={<ResearchPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/experience" element={<ExperiencePage />} />
